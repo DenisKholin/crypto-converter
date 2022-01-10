@@ -3771,4 +3771,18 @@ ul.slick-dots {
 	box-sizing: border-box;
 	border-radius: 4px;
 }
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1s;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 1;
+	}
+}
 /*# sourceMappingURL=main.css.map */

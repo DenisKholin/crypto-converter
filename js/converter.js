@@ -17,6 +17,13 @@ let
 	course,
 	trigger = 1;
 
+getButtons.forEach(e => {
+	e.style.display = 'none';
+	if ((e.getAttribute('data-moneyType') == 'cashPlus') || (e.getAttribute('data-moneyType') == 'cash')) {
+		show(e);
+	}
+});
+
 
 async function getCurruncy() {
 	const response = await fetch('https://api.001k.exchange/api/courses');
@@ -25,7 +32,7 @@ async function getCurruncy() {
 	if (trigger == 1) {
 		course = result.USDTTRC.CARDRUB.Cashless.get;
 	}
-	console.log(result[btnGiveId].CARDRUB.Cashless.get);
+	console.log(result.BTC.CASHRUB.MSK.get);
 	// console.log(result[val].CARDRUB.Cashless.get);
 	console.log(result);
 }
@@ -41,53 +48,67 @@ function removeActiveClass(side) {
 	});
 }
 
-function autoHideButtons() {
-
+function show(e) {
+	removeActiveClass(getButtons);
+	e.style.display = 'block';
+	e.classList.add('fade');
 
 }
+
 
 function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 	buttonSelector.forEach(el => {
 		el.addEventListener('click', ev => {
 			trigger = 0;
 
-			if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
-				getButtons.forEach(e => {
-					e.style.display = 'none';
-					if ((e.getAttribute('data-moneyType') == 'cashPlus') || (e.getAttribute('data-moneyType') == 'cash')) {
-						e.style.display = 'block';
-					}
-				});
-			} else if (el.getAttribute('data-moneyType') == 'crypto') {
-				getButtons.forEach(e => {
-					e.style.display = 'none';
-					if (e.getAttribute('data-moneyType') == 'cash') {
-						e.style.display = 'block';
-					}
-				});
-			} else if (el.getAttribute('data-moneyType') == 'payment') {
-				getButtons.forEach(e => {
-					e.style.display = 'none';
-					if (e.getAttribute('data-btnGetId') == 'CASHUSD') {
-						e.style.display = 'block';
-					}
-				});
-			} else if ((el.getAttribute('data-moneyType') == 'cash') && (el.getAttribute('data-btnId') !== 'CASHUSD')) {
-				getButtons.forEach(e => {
-					e.style.display = 'none';
-					if (e.getAttribute('data-moneyType') == 'crypto') {
-						e.style.display = 'block';
-					}
-				});
-			} else if (el.getAttribute('data-btnId') == 'CASHUSD') {
-				getButtons.forEach(e => {
-					e.style.display = 'none';
-					if ((e.getAttribute('data-moneyType') == 'crypto') || (e.getAttribute('data-moneyType') == 'payment') || (e.getAttribute('data-moneyType') == 'cashPlus')) {
-						e.style.display = 'block';
-					}
-				});
+			if (el.getAttribute('data-side') == 'give') {
+				if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
+					getButtons.forEach(e => {
+						e.style.display = 'none';
+						if ((e.getAttribute('data-moneyType') == 'cashPlus') || (e.getAttribute('data-moneyType') == 'cash')) {
+							show(e);
+							document.querySelector('[data-btnGetId="CARDRUB"]').classList.add('active-button-effect');
+							btnGetId = 'CARDRUB';
+						}
+					});
+				} else if (el.getAttribute('data-moneyType') == 'crypto') {
+					getButtons.forEach(e => {
+						e.style.display = 'none';
+						if (e.getAttribute('data-moneyType') == 'cash') {
+							show(e);
+							document.querySelector('[data-btnGetId="CARDRUB"]').classList.add('active-button-effect');
+							btnGetId = 'CARDRUB';
+						}
+					});
+				} else if (el.getAttribute('data-moneyType') == 'payment') {
+					getButtons.forEach(e => {
+						e.style.display = 'none';
+						if (e.getAttribute('data-btnGetId') == 'CASHUSD') {
+							show(e);
+							document.querySelector('[data-btnGetId="CASHUSD"]').classList.add('active-button-effect');
+							btnGetId = 'CASHUSD';
+						}
+					});
+				} else if ((el.getAttribute('data-moneyType') == 'cash') && (el.getAttribute('data-btnId') !== 'CASHUSD')) {
+					getButtons.forEach(e => {
+						e.style.display = 'none';
+						if (e.getAttribute('data-moneyType') == 'crypto') {
+							show(e);
+							document.querySelector('[data-btnGetId="USDTTRC"]').classList.add('active-button-effect');
+							btnGetId = 'USDTTRC';
+						}
+					});
+				} else if (el.getAttribute('data-btnId') == 'CASHUSD') {
+					getButtons.forEach(e => {
+						e.style.display = 'none';
+						if ((e.getAttribute('data-moneyType') == 'crypto') || (e.getAttribute('data-moneyType') == 'payment') || (e.getAttribute('data-moneyType') == 'cashPlus')) {
+							show(e);
+							document.querySelector('[data-btnGetId="USDTTRC"]').classList.add('active-button-effect');
+							btnGetId = 'USDTTRC';
+						}
+					});
+				}
 			}
-
 
 
 			btnId = el.getAttribute(btnAtrribute);
@@ -102,24 +123,47 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 			if (el.getAttribute('data-side') == dataSide) {
 				select.innerHTML = btnId;
 			}
-			// if (el.getAttribute('data-moneyType') == 'cash') {
-			// 	console.log(result[btnId].USDTTRC);
-			// } else 
+
+
 			if (el.getAttribute('data-moneyType') == 'payment') {
 				course = result[btnGiveId].CASHUSD.ODS.get;
-				console.log(result[btnGiveId].CASHUSD.ODS.get);
+				console.log(course);
+				giveToGet();
+				// } else if ((el.getAttribute('data-moneyType') == 'crypto') || (el.getAttribute('data-moneyType') == 'cryptoPlus')) {
+				// 	if ((btnGetId == 'CARDRUB') || (btnGetId == 'CARDUAH')) {
+				// 		course = result[btnGiveId][btnGetId].Cashless.send;
+				// 		console.log(course);
+				// 		getToGive();
+				// 	} else if (btnGetId == 'CASHRUB') {
+				// 		course = result[btnGiveId][btnGetId].MSK.send;
+				// 		console.log(course);
+				// 		getToGive();
+				// 	} else if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
+				// 		course = result[btnGiveId][btnGetId].Cashless.send;
+				// 		console.log(course);
+				// 		giveToGet();
+				// 	} else if (btnGiveId == 'CASHRUB') {
+				// 		course = result[btnGiveId][btnGetId].MSK.send;
+				// 		console.log(course);
+				// 		giveToGet();
+				// 	}
+			} else if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
+				course = result[btnGiveId][btnGetId].Cashless.send;
+				console.log(course);
+				getToGive();
+
+			} else if ((btnGetId == 'CARDRUB') || (btnGetId == 'CARDUAH')) {
+				course = result[btnGiveId][btnGetId].Cashless.get;
+				console.log(course);
+				giveToGet();
 			}
-			// else {
-			// 	console.log(result[btnId].CARDRUB.Cashless.get);
+
+			// if (buttonSelector == giveButtons) {
+			// 	giveToGet();
+			// } else {
+			// 	getToGive();
 			// }
 
-			if (buttonSelector == giveButtons) {
-				giveToGet();
-			} else {
-				getToGive();
-			}
-
-			console.log(btnId);
 			removeActiveClass(buttonSelector);
 			el.classList.add('active-button-effect');
 		});
@@ -137,11 +181,21 @@ function listToButtons(listName, buttonSelector, elementSelector, side) {
 }
 
 function giveToGet() {
-	inputGet.value = inputGive.value * course;
+	if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH') || (btnGiveId == 'CASHRUB') || (btnGiveId == 'CASHUSD')) {
+		inputGet.value = inputGive.value / course;
+	} else {
+		inputGet.value = inputGive.value * course;
+	}
+
 }
 
 function getToGive() {
-	inputGive.value = inputGet.value / course;
+	if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH') || (btnGiveId == 'CASHRUB') || (btnGiveId == 'CASHUSD')) {
+		inputGive.value = inputGet.value * course;
+	} else {
+		inputGive.value = inputGet.value / course;
+	}
+
 }
 
 inputGive.addEventListener('input', () => {
@@ -160,4 +214,4 @@ selectButton(getButtons, btnGetId, 'data-btnGetId', 'get', selectGet);
 listToButtons(moneyListGive, 'data-btnId', 'data-listId', giveButtons);
 listToButtons(moneyListGet, 'data-btnGetId', 'data-listGetId', getButtons);
 
-// console.log(inputGet.value);
+// console.log(result.BTC.CASHRUB.MSK.get);
