@@ -41,11 +41,54 @@ function removeActiveClass(side) {
 	});
 }
 
+function autoHideButtons() {
+
+
+}
 
 function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 	buttonSelector.forEach(el => {
 		el.addEventListener('click', ev => {
 			trigger = 0;
+
+			if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
+				getButtons.forEach(e => {
+					e.style.display = 'none';
+					if ((e.getAttribute('data-moneyType') == 'cashPlus') || (e.getAttribute('data-moneyType') == 'cash')) {
+						e.style.display = 'block';
+					}
+				});
+			} else if (el.getAttribute('data-moneyType') == 'crypto') {
+				getButtons.forEach(e => {
+					e.style.display = 'none';
+					if (e.getAttribute('data-moneyType') == 'cash') {
+						e.style.display = 'block';
+					}
+				});
+			} else if (el.getAttribute('data-moneyType') == 'payment') {
+				getButtons.forEach(e => {
+					e.style.display = 'none';
+					if (e.getAttribute('data-btnGetId') == 'CASHUSD') {
+						e.style.display = 'block';
+					}
+				});
+			} else if ((el.getAttribute('data-moneyType') == 'cash') && (el.getAttribute('data-btnId') !== 'CASHUSD')) {
+				getButtons.forEach(e => {
+					e.style.display = 'none';
+					if (e.getAttribute('data-moneyType') == 'crypto') {
+						e.style.display = 'block';
+					}
+				});
+			} else if (el.getAttribute('data-btnId') == 'CASHUSD') {
+				getButtons.forEach(e => {
+					e.style.display = 'none';
+					if ((e.getAttribute('data-moneyType') == 'crypto') || (e.getAttribute('data-moneyType') == 'payment') || (e.getAttribute('data-moneyType') == 'cashPlus')) {
+						e.style.display = 'block';
+					}
+				});
+			}
+
+
 
 			btnId = el.getAttribute(btnAtrribute);
 
@@ -65,9 +108,10 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 			if (el.getAttribute('data-moneyType') == 'payment') {
 				course = result[btnGiveId].CASHUSD.ODS.get;
 				console.log(result[btnGiveId].CASHUSD.ODS.get);
-			} else {
-				console.log(result[btnId].CARDRUB.Cashless.get);
 			}
+			// else {
+			// 	console.log(result[btnId].CARDRUB.Cashless.get);
+			// }
 
 			if (buttonSelector == giveButtons) {
 				giveToGet();
@@ -110,6 +154,7 @@ inputGet.addEventListener('input', () => {
 
 
 getCurruncy();
+
 selectButton(giveButtons, btnGiveId, 'data-btnId', 'give', selectGive);
 selectButton(getButtons, btnGetId, 'data-btnGetId', 'get', selectGet);
 listToButtons(moneyListGive, 'data-btnId', 'data-listId', giveButtons);
