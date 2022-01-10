@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>KOI exchanger - безопасный обмен электронных валют</title>
+	<link rel="icon" href="./img/icons/favicon.svg" type="image/x-icon" />
+	<link rel="stylesheet" href="./css/main.scss" />
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body style="overflow-x: hidden">
+	<header class="header">
+		<div class="header-logo">
+			<a href="/index.html"><img src="./img/icons/logo-header.svg" alt="" /></a>
+		</div>
+		<div class="header-menu">
+			<div class="header-menu__text">Партнерам</div>
+			<div class="header-menu__text">Блог</div>
+			<div class="header-menu__text active">Правила сервиса</div>
+			<div class="header-menu__text">FInance</div>
+			<div class="header-menu__text">Consulting</div>
+			<div class="header-menu__text">Контакты</div>
+		</div>
+		<div class="header-language">
+			<img src="./img/icons/picture-language.svg" alt="" />
+			<div>RU</div>
+			<img src="./img/icons/arrow-language.svg" alt="" />
+		</div>
+		<div class="header__burger">
+			<span></span>
+		</div>
+		<nav class="header__menu">
+			<div class="header__language">
+				<img src="./img/icons/picture-language.svg" alt="" />
+				<div>RU</div>
+				<img class="arrow" src="./img/Vectorдаыва.png" alt="" />
+			</div>
+			<ul class="header__list">
+				<li class="header__link"><a class="" href=""></a> Партнерам</li>
+				<li class="header__link">Блог</li>
+				<li class="header__link active">Правила сервиса</li>
+				<li class="header__link">FInance</li>
+				<li class="header__link">Consulting</li>
+				<li class="header__link">Контакты</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="fon">
+		<section class="scroll-line">
+			<div class="line">
+				<a id="start" class="start"><img src="./img/Play.png" /></a>
+				<a id="stop" class="stop pause" href="#0"><img src="./img/icons/pause.svg" alt="" /></a>
+				<marquee id="beg" scrolldelay="200" onmouseover="this.scrollDelay=70" onmouseout="this.scrollDelay=200"
+					behavior="scroll" direction="left">
+					<div class="line-scroll">
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+					</div>
+				</marquee>
+			</div>
+		</section>
+
+		<section class="title">
+			<h1 class="_anim-item">
+				Покупка и продажа <span>криптовалюты</span><br />
+				за наличные в Украине
+			</h1>
+		</section>
+
+		<section class="exchanger">
+			<div class="exchanger-table">
+				<div class="exchanger-table__left">
+					<div class="exchanger-table__left-header">
+						<div class="exchanger-text">Отдаете:</div>
+						<div class="exchanger-list">
+							<div id="btnAll" class="exchanger-list__text active-btn">
+								<a href="#allNone">ВСЕ</a>
+							</div>
+							<div id="btnCash" class="exchanger-list__text">
+								<a href="#cashNone">CASH</a>
+							</div>
+							<div id="btncCashless" class="exchanger-list__text">
+								<a href="#cashlessNone">CASHLESS</a>
+							</div>
+							<div id="btnCrypto" class="exchanger-list__text">
+								<a href="#cryptoNone">CRYPTO</a>
+							</div>
+						</div>
+					</div>
+					<div class="exchanger-table__left-body ">
+						<div id="all" class="block _anim-item-text anim_icon">
+							<div class="block-btn active-button-effect " data-side="give" data-btnId="USDTTRC"
+								data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Tether TRC20 (USDT)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="CASHUSD" data-moneyType="cash">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные USD</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="USDTERC" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Tether ERC20 (USDT)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="BTC" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Bitcoin (BTC)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="ETH" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Ethereum (ETH)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="BCH" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">BitcoinCash (BCH)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="LTC" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Litecoin (LTC)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="ADA" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Cardano (ADA)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="BNB" data-moneyType="crypto">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Binance Coin (BNB)</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="CASHRUB" data-moneyType="cash">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные RUB</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="ADVCUSD" data-moneyType="payment">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Advanced Cash USD</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="CARDUAH" data-moneyType="cash">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Visa/MasterCard UAH</div>
+							</div>
+							<div class="block-btn" data-side="give" data-btnId="CARDRUB" data-moneyType="cash">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Visa/MasterCard RUB</div>
+							</div>
+						</div>
+						<div id="cash" class="block"></div>
+						<div id="cashless" class="block"></div>
+						<div id="crypto" class="block"></div>
+						<div id="allNone" class="block-none"></div>
+						<div id="cashNone" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+						<div id="cashlessNone" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+						<div id="cryptoNone" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+
+						<div class="input">
+							<input class="input-text" id="inputGive" type="number" value="0" />
+							<div class="container">
+								<div class="dropdown">
+									<div class="select" id="selectGive">
+										<img src="/img/icon-valute.svg" alt="" />
+										<span>USDTTRC</span>
+										<i class="fa fa-chevron-left"></i>
+									</div>
+									<input type="hidden" name="gender" />
+									<ul class="dropdown-menu" id="dropdownGive">
+										<li data-listId="USDTTRC">USDTTRC</li>
+										<li data-listId="USDTERC">USDTERC</li>
+										<li data-listId="ADA">ADA</li>
+										<li data-listId="ADVCUSD">ADVCUSD</li>
+										<li data-listId="BCH">BCH</li>
+										<li data-listId="BNB">BNB</li>
+										<li data-listId="BTC">BTC</li>
+										<li data-listId="CARDRUB">CARDRUB</li>
+										<li data-listId="CARDUAH">CARDUAH</li>
+										<li data-listId="CASHRUB">CASHRUB</li>
+										<li data-listId="ETH">ETH</li>
+										<li data-listId="CASHUSD">CASHUSD</li>
+										<li data-listId="LTC">LTC</li>
+
+
+									</ul>
+								</div>
+								<!-- <span class="msg"></span> -->
+							</div>
+						</div>
+
+						<div class="attention">
+							<img src="./img/attention.svg" alt="" />
+							<div class="attention-text">
+								<span>2000 USDTTRC</span> должно быть у вас на счету<br />Фактическая
+								сумма к получению: <span>1940 USDTTRC</span>
+							</div>
+						</div>
+
+						<div class="question">
+							<div class="telegram">
+								<img src="./img/telegram.svg" alt="" />
+								<a class="telegram-text" href="">
+									<div class="telegram-text">Хотите лучше?</div>
+								</a>
+							</div>
+							<div class="chat">
+								<img src="./img/chat-icon.svg" alt="" />
+								<a class="chat-text" href="">
+									<div class="chat-text">Нужно больше?</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<img class="exchanger-table__img" src="./img/icons/arrow-left-right.svg" alt="" />
+				<img class="exchanger-table__img-mobile" src="./img/arrow-top-bottom.png" alt="" />
+
+				<div class="exchanger-table__right">
+					<div class="exchanger-table__right-header">
+						<div class="exchanger-text">Получаете:</div>
+						<div class="exchanger-list">
+							<div id="btnAll-right" class="exchanger-list__text active-btn">
+								<a href="#allNone-right">ВСЕ</a>
+							</div>
+							<div id="btnCash-right" class="exchanger-list__text">
+								<a href="#cashNone-right">CASH</a>
+							</div>
+							<div id="btncCashless-right" class="exchanger-list__text">
+								<a href="#cashlessNone-right">CASHLESS</a>
+							</div>
+							<div id="btnCrypto-right" class="exchanger-list__text">
+								<a href="#cryptoNone-right">CRYPTO</a>
+							</div>
+						</div>
+					</div>
+					<div class="exchanger-table__right-body">
+						<div id="all-right" class="block _anim-item-text anim_icon">
+							<div class="block-btn  active-button-effect " data-side="get" data-btnGetId="CASHUSD">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные USD</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="CASHRUB">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные RUB</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="CARDUAH">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Visa/MasterCard UAH</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="CARDRUB">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Visa/MasterCard RUB</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="ALPCNY">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Alipay</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="WIRECNY">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Любой банк CNY</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="USDTTRC">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Tether TRC20 (USDT)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="USDTERC">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Tether ERC20 (USDT)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="BTC">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Bitcoin (BTC)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="ETH">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Ethereum (ETH)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="BCH">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">BitcoinCash (BCH)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="LTC">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Litecoin (LTC)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="ADA">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Cardano (ADA)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="BNB">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Binance Coin (BNB)</div>
+							</div>
+							<div class="block-btn" data-side="get" data-btnGetId="ADVCUSD" data-moneyType="payment">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Advanced Cash USD</div>
+							</div>
+						</div>
+						<div id="cash-right" class="block"></div>
+						<div id="cashless-right" class="block"></div>
+						<div id="crypto-right" class="block"></div>
+						<div id="allNone-right" class="block-none"></div>
+						<div id="cashNone-right" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+						<div id="cashlessNone-right" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+						<div id="cryptoNone-right" class="block-none">
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+							<div class="block-btn">
+								<div class="block-btn__img">
+									<img src="./img/bitcoin-icon-small.svg" alt="" />
+								</div>
+								<div class="block-btn__text">Наличные</div>
+							</div>
+						</div>
+
+						<div class="input">
+							<input class="input-text" id="inputGet" type="number" value="0" />
+							<div class="container">
+								<div class="dropdown">
+									<div class="select" id="selectGet">
+										<img src="/img/icon-valute.svg" alt="" />
+										<span>USDTTRC</span>
+										<i class="fa fa-chevron-left"></i>
+									</div>
+									<input type="hidden" name="gender" />
+									<ul class="dropdown-menu" id="dropdownGet">
+										<li data-listGetId="USDTTRC">USDTTRC</li>
+										<li data-listGetId="USDTERC">USDTERC</li>
+										<li data-listGetId="ADA">ADA</li>
+										<li data-listGetId="ADVCUSD">ADVCUSD</li>
+										<li data-listGetId="BCH">BCH</li>
+										<li data-listGetId="BNB">BNB</li>
+										<li data-listGetId="BTC">BTC</li>
+										<li data-listGetId="CARDRUB">CARDRUB</li>
+										<li data-listGetId="CARDUAH">CARDUAH</li>
+										<li data-listGetId="CASHRUB">CASHRUB</li>
+										<li data-listGetId="ETH">ETH</li>
+										<li data-listGetId="CASHUSD">CASHUSD</li>
+										<li data-listGetId="LTC">LTC</li>
+									</ul>
+								</div>
+								<!-- <span class="msg"></span> -->
+							</div>
+						</div>
+
+						<div class="city">
+							<div class="city-text active">Киев</div>
+							<div class="city-text">Москва</div>
+							<div class="city-text">Одесса</div>
+							<div class="city-text">Лос-Анджелес</div>
+							<div class="city-text">Львов</div>
+							<div class="city-text">Нью-Йорк</div>
+							<div class="city-text">Майами</div>
+						</div>
+
+						<div class="attention-mob">
+							<img src="./img/attention.svg" alt="" />
+							<div class="attention-mob__text">
+								<span>2000 USDTTRC</span> должно быть у вас на счету.
+								Фактическая сумма к получению: <span>1940 USDTTRC</span>
+							</div>
+						</div>
+
+						<div class="wellet">
+							<div class="well">
+								<div class="well-timer">
+									<div class="well-timer__sec">
+										<div id="countdown" class="countdown">
+											<div class="countdown-number">
+												<span class="seconds countdown-time"></span>
+												<span class="countdown-text">Sec.</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="well-text">
+									<div class="well-text__top">КУРС:</div>
+									<div class="well-text__bottom">1 : 0.97</div>
+								</div>
+							</div>
+							<div class="reserve">
+								<div class="reserve-top">
+									<img src="./img/icons/well.svg" alt="" />
+									РЕЗЕРВ:
+								</div>
+								<div class="reserve-bottom">1128350 CASHUSD</div>
+							</div>
+						</div>
+
+						<div class="btn">
+							<div class="btn-text">Обменять</div>
+							<div class="btn-img"><img src="./img/Vector.svg" alt="" /></div>
+						</div>
+
+						<div class="question-mob">
+							<div class="telegram">
+								<img src="./img/telegram.svg" alt="" />
+								<a class="telegram-text" href="">
+									<div class="telegram-text">Хотите лучше?</div>
+								</a>
+							</div>
+							<div class="chat">
+								<img src="./img/chat-icon.svg" alt="" />
+								<a class="chat-text" href="">
+									<div class="chat-text">Нужно больше?</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="reserve">
+			<h2 class="_anim-item">РЕЗЕРВЫ</h2>
+			<div class="reserve-btc">
+				<div id="btc_1" class="reserve-btc__item _anim-item-right">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img one"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_2" class="reserve-btc__item _anim-item-text">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img two"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_3" class="reserve-btc__item _anim-item-left">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img three"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_4" class="reserve-btc__item _anim-item-right">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img four"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_5" class="reserve-btc__item _anim-item-text">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img five"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_6" class="reserve-btc__item _anim-item-left">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img six"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_7" class="reserve-btc__item _anim-item-right">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img seven"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_8" class="reserve-btc__item _anim-item-text">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img eight"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_9" class="reserve-btc__item _anim-item-left">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img nine"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_10" class="reserve-btc__item _anim-item-right">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img ten"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_11" class="reserve-btc__item">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img eleven"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="btc_12" class="reserve-btc__item _anim-item-left">
+					<img src="./img/bitcoin-icon-big.svg" alt="" />
+					<div class="reserve-btc__item-text">
+						<div class="reserve-btc__item-text-top">BTC</div>
+						<div class="reserve-btc__item-text-bottom">
+							<div class="reserve-btc__item-text-bottom_img twelve"></div>
+							<div class="reserve-btc__item-text-bottom__text">
+								6.34740841
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="partner">
+			<h2 class="_anim-item">ПАРТНЕРАМ</h2>
+			<div class="partner-block _anim-item-text">
+				<img src="./img/partner.png" alt="" />
+				<div class="partner-block__text">
+					<h3>Добрый день уважаемые клиенты!</h3>
+					С помощью нашего сервиса Вы можете не только выгодно обменивать
+					электронную валюту, но и хорошо зарабатывать на этом. Привлекайте
+					как можно больше клиентов для проведения обменов в нашем обменном
+					пункте и получайте партнерское вознаграждение до 1% от суммы
+					обменов. Выплату сможете получить любым удобным для Вас способом в
+					любой валюте которая представлена у нас на сайте.
+				</div>
+			</div>
+			<div class="partner-block__mob _anim-item-text">
+				<div class="block__text">
+					<h3>Добрый день уважаемые клиенты!</h3>
+					С помощью нашего сервиса Вы можете не только выгодно обменивать
+					электронную валюту, но и хорошо зарабатывать на этом. Привлекайте
+					как можно больше клиентов для проведения обменов в нашем обменном
+					пункте и получайте партнерское вознаграждение до 1% от суммы
+					обменов. Выплату сможете получить любым удобным для Вас способом в
+					любой валюте которая представлена у нас на сайте.
+				</div>
+				<div class="block__img"><img src="/img/Group5634.png" alt="" /></div>
+			</div>
+		</section>
+
+		<section class="partners">
+			<h2 class="_anim-item">ПАРТНЕРЫ</h2>
+			<div class="partners-text">
+				<div class="partners-text__item _anim-item-right">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-right">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-right">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-right">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-left">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-left">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-left mob-none">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+				<div class="partners-text__item _anim-item-left mob-none">
+					<img src="./img/CREOtivity.png" alt="" />
+				</div>
+			</div>
+		</section>
+
+		<section class="also">
+			<h2 class="_anim-item">ПОПРОБУЙТЕ ТАКЖЕ</h2>
+			<div class="also-text">
+				<img src="./img/Group5805.png" alt="" />
+				<div class="also-text-block _anim-item-left">
+					<div class="also-text-block__top">
+						<div class="button">
+							<img src="./img/icon-koi-white.png" alt="" />KOI Wallet
+						</div>
+						<hr />
+						<div class="text">
+							Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum
+						</div>
+					</div>
+					<div class="also-text-block__bottom">
+						<div class="button">
+							<img src="./img/icon-koi-white.png" alt="" />KOI Crypto
+						</div>
+						<hr />
+						<div class="text">
+							Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="review">
+			<h2 class="_anim-item">ОТЗЫВЫ</h2>
+			<div class="container">
+				<div class="container-slide">
+					<div class="slide-direction">
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container-slider">
+					<div class="slider-review-mobile">
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+						<div class="slider__item">
+							<div class="slider__item-block">
+								<div class="head">
+									<div class="head-icon">
+										<img src="./img/otziv-chel.png" alt="" />
+									</div>
+									<div class="head-block">
+										<div class="head-block__name">Марія Іванівна</div>
+										<div class="head-block__ceo">CEO at ABC</div>
+										<div class="head-block__icon">
+											<img src="./img/icon-inst.png" alt="" />
+											<img src="./img/icon-telegram.png" alt="" />
+											<img src="./img/icon-face.png" alt="" />
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact _anim-item-text">
+			<div class="contact-img">
+				<img src="./img/Group5555555.png" alt="" />
+			</div>
+			<div class="contact-info">
+				<h2>КОНТАКТЫ</h2>
+				<div class="contact-info__tel">
+					<a href=""><img src="./img/call.png" alt="" />+91 98765 43210</a>
+				</div>
+				<div class="contact-info__mail">
+					<a href=""><img src="./img/email.png" alt="" />hello@koi.tech</a>
+				</div>
+				<div class="contact-info__adress">
+					<a href=""><img src="./img/Location.png" alt="" />Пр. Московський 24 А</a>
+				</div>
+				<div class="contact-info__icon">
+					<a href=""><img src="./img/telegram-contact.png" alt="" /></a>
+					<a href=""><img src="./img/facebook-contact.png" alt="" /></a>
+				</div>
+			</div>
+			<form class="contact-form">
+				<img class="contact-form__name" src="./img/name.svg" alt="" />
+				<img class="contact-form__call" src="./img/call.svg" alt="" />
+				<img class="contact-form__email" src="./img/email.svg" alt="" />
+				<input class="contact-form__input" type="text" placeholder="Имя" />
+				<input class="contact-form__input" type="text" placeholder="+380 99 093 5501" />
+				<input class="contact-form__input" type="email" placeholder="E-mail" />
+				<a href="">
+					<div class="contact-form__btn">
+						Отправить<img src="./img/Vector222.png" alt="" /></div>
+				</a>
+			</form>
+		</section>
+
+		<section class="contact-mob _anim-item-text">
+			<h2>КОНТАКТЫ</h2>
+			<form class="form">
+				<img class="form__name" src="./img/name.svg" alt="" />
+				<img class="form__call" src="./img/call.svg" alt="" />
+				<img class="form__email" src="./img/email.svg" alt="" />
+				<input class="form__input" type="text" placeholder="Имя" />
+				<input class="form__input" type="text" placeholder="+380 99 093 5501" />
+				<input class="form__input" type="email" placeholder="E-mail" />
+				<a href="">
+					<div class="form__btn">
+						Отправить<img src="./img/Vector222.png" alt="" /></div>
+				</a>
+			</form>
+			<div class="contact-mob__info">
+				<div class="contact-mob__info-img">
+					<img src="./img/Group5555555.png" alt="" />
+				</div>
+				<div class="contact-mob__info-network">
+					<div class="contact-mob__info-network__tel">
+						<a href=""><img src="./img/call.svg" alt="" />+91 98765 43210</a>
+					</div>
+					<div class="contact-mob__info-network__mail">
+						<a href=""><img src="./img/email.svg" alt="" />hello@koi.tech</a>
+					</div>
+					<div class="contact-mob__info-network__adress">
+						<a href=""><img src="./img/Location.svg" alt="" />Пр. Московський 24 А</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scroll-line">
+			<div class="line">
+				<a id="start1" class="start"><img src="./img/Play.png" /></a>
+				<a id="stop1" class="stop pause" href="#0"><img src="./img/icons/pause.svg" alt="" /></a>
+				<marquee id="begFooter" behavior="scroll" direction="left" scrolldelay="200"
+					onmouseover="this.scrollDelay=70" onmouseout="this.scrollDelay=200">
+					<div class="line-scroll">
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BTC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+					</div>
+				</marquee>
+			</div>
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer">
+			<div class="footer-info">
+				<div class="footer-info__icon">
+					<div><img src="./img/logo-footer.png" alt="" /></div>
+					<div class="network">
+						<a href=""><img src="./img/icons/inst-icon.png" alt="" /></a>
+						<a href=""><img src="./img/icons/teleg-icon.png" alt="" /></a>
+						<a href=""><img src="./img/icons/facebook-icon.png" alt="" /></a>
+					</div>
+				</div>
+				<div class="footer-info__menu">
+					<div class="footer-info__menu-top">
+						<a href="">Партнерам</a>
+						<a href="">Finance</a>
+					</div>
+					<div class="footer-info__menu-bottom">
+						<a href="">Блог</a>
+						<a href="">Consulting</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-contact">
+				<div class="footer-contact__info__mail">
+					<a href=""><img src="./img/email-footer.svg" alt="" />hello@koi.tech</a>
+				</div>
+				<div class="footer-contact__info__tel">
+					<a href=""><img src="./img/call-footer.svg" alt="" />+91 98765 43210</a>
+				</div>
+				<div class="footer-contact__info__adress">
+					<a href=""><img src="./img/Location-footer.svg" alt="" />Пр. Московський 24
+						А</a>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<div class="author">
+			<div class="author-left">© 2021 KOI UI Kit. All rights reserved</div>
+			<div class="author-right">
+				<div class="author-right__item">
+					<a href="">Terms & Conditions</a>
+				</div>
+				<hr />
+				<div class="author-right__item"><a href="">Privacy Policy</a></div>
+				<hr />
+				<div class="author-right__item"><a href="">Sitemap</a></div>
+				<hr />
+				<div class="author-right__item"><a href="">Disclaimer</a></div>
+			</div>
+		</div>
+	</footer>
+	<script src="js/converter.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./js/slick.min.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
