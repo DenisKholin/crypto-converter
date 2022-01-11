@@ -70,22 +70,11 @@ function removeCityActiveClass(selector) {
 	});
 }
 
-// function hideCities(selector) {
-// 	selector.forEach(elem => {
-// 		elem.addEventListener('click', (ev) => {
-// 			removeCityActiveClass(selector);
-// 		});
-// 	});
-// }
-
-
 
 function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 	buttonSelector.forEach(el => {
 		el.addEventListener('click', ev => {
 			trigger = 0;
-
-
 
 			if (el.getAttribute('data-side') == 'give') {
 				if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
@@ -142,6 +131,14 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 			}
 
 
+			btnId = el.getAttribute(btnAtrribute);
+			if (buttonSelector == giveButtons) {
+				btnGiveId = btnId;
+			} else {
+				btnGetId = btnId;
+			}
+
+
 			if (el.getAttribute('data-USD') == 'getFull' && btnGetId == 'CASHUSD') {
 				getCities.forEach(elem => {
 					elem.style.display = 'flex';
@@ -174,18 +171,11 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 					hideCities(allCities);
 				}
 
-			btnId = el.getAttribute(btnAtrribute);
-
-			if (buttonSelector == giveButtons) {
-				btnGiveId = btnId;
-			} else {
-				btnGetId = btnId;
-			}
-
 
 			if (el.getAttribute('data-side') == dataSide) {
 				select.innerHTML = btnId;
 			}
+
 
 			if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
 				course = result[btnGiveId][btnGetId].Cashless.send;
@@ -197,11 +187,25 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 				console.log(course);
 				giveToGet();
 
+			} else if (btnGiveId == 'ADVCUSD') {
+				course = result[btnGiveId][btnGetId].ODS.get;
+				console.log(course);
+				giveToGet();
+
+			} else if (btnGetId == 'ADVCUSD') {
+				course = result[btnGiveId][btnGetId].ODS.send;
+				console.log(course);
+				giveToGet();
+
+			} else if ((btnGetId == 'ALPCNY' || btnGetId == 'WIRECNY') && btnGiveId == 'CASHUSD') {
+				course = result[btnGiveId][btnGetId].KIEV.get_best;
+				console.log(course);
+				giveToGet();
+
 			} else if ((btnGetId == 'ALPCNY') || (btnGetId == 'WIRECNY')) {
 				course = result[btnGiveId][btnGetId].Cashless.get_best;
 				console.log(course);
 				giveToGet();
-
 
 			} else if ((btnGiveId == 'CASHRUB')) {
 				course = result[btnGiveId][btnGetId].MSK.send;
