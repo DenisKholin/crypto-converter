@@ -20,7 +20,8 @@ let
 getButtons.forEach(e => {
 	e.style.display = 'none';
 	if ((e.getAttribute('data-moneyType') == 'cashPlus') || (e.getAttribute('data-moneyType') == 'cash')) {
-		show(e);
+		e.style.display = 'block';
+		e.classList.add('fade');
 	}
 });
 
@@ -49,6 +50,7 @@ function removeActiveClass(side) {
 }
 
 function show(e) {
+
 	removeActiveClass(getButtons);
 	e.style.display = 'block';
 	e.classList.add('fade');
@@ -61,6 +63,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 		el.addEventListener('click', ev => {
 			trigger = 0;
 
+
 			if (el.getAttribute('data-side') == 'give') {
 				if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
 					getButtons.forEach(e => {
@@ -69,6 +72,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 							show(e);
 							document.querySelector('[data-btnGetId="CARDRUB"]').classList.add('active-button-effect');
 							btnGetId = 'CARDRUB';
+							selectGet.innerHTML = btnGetId;
 						}
 					});
 				} else if (el.getAttribute('data-moneyType') == 'crypto') {
@@ -78,6 +82,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 							show(e);
 							document.querySelector('[data-btnGetId="CARDRUB"]').classList.add('active-button-effect');
 							btnGetId = 'CARDRUB';
+							selectGet.innerHTML = btnGetId;
 						}
 					});
 				} else if (el.getAttribute('data-moneyType') == 'payment') {
@@ -87,6 +92,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 							show(e);
 							document.querySelector('[data-btnGetId="CASHUSD"]').classList.add('active-button-effect');
 							btnGetId = 'CASHUSD';
+							selectGet.innerHTML = btnGetId;
 						}
 					});
 				} else if ((el.getAttribute('data-moneyType') == 'cash') && (el.getAttribute('data-btnId') !== 'CASHUSD')) {
@@ -96,6 +102,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 							show(e);
 							document.querySelector('[data-btnGetId="USDTTRC"]').classList.add('active-button-effect');
 							btnGetId = 'USDTTRC';
+							selectGet.innerHTML = btnGetId;
 						}
 					});
 				} else if (el.getAttribute('data-btnId') == 'CASHUSD') {
@@ -105,6 +112,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 							show(e);
 							document.querySelector('[data-btnGetId="USDTTRC"]').classList.add('active-button-effect');
 							btnGetId = 'USDTTRC';
+							selectGet.innerHTML = btnGetId;
 						}
 					});
 				}
@@ -125,29 +133,30 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 			}
 
 
-			if (el.getAttribute('data-moneyType') == 'payment') {
-				course = result[btnGiveId].CASHUSD.ODS.get;
-				console.log(course);
-				giveToGet();
-				// } else if ((el.getAttribute('data-moneyType') == 'crypto') || (el.getAttribute('data-moneyType') == 'cryptoPlus')) {
-				// 	if ((btnGetId == 'CARDRUB') || (btnGetId == 'CARDUAH')) {
-				// 		course = result[btnGiveId][btnGetId].Cashless.send;
-				// 		console.log(course);
-				// 		getToGive();
-				// 	} else if (btnGetId == 'CASHRUB') {
-				// 		course = result[btnGiveId][btnGetId].MSK.send;
-				// 		console.log(course);
-				// 		getToGive();
-				// 	} else if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
-				// 		course = result[btnGiveId][btnGetId].Cashless.send;
-				// 		console.log(course);
-				// 		giveToGet();
-				// 	} else if (btnGiveId == 'CASHRUB') {
-				// 		course = result[btnGiveId][btnGetId].MSK.send;
-				// 		console.log(course);
-				// 		giveToGet();
-				// 	}
-			} else if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
+			// if (el.getAttribute('data-moneyType') == 'payment') {
+			// 	course = result[btnGiveId].CASHUSD.ODS.get;
+			// 	console.log(course);
+			// 	giveToGet();
+			// } else if ((el.getAttribute('data-moneyType') == 'crypto') || (el.getAttribute('data-moneyType') == 'cryptoPlus')) {
+			// 	if ((btnGetId == 'CARDRUB') || (btnGetId == 'CARDUAH')) {
+			// 		course = result[btnGiveId][btnGetId].Cashless.send;
+			// 		console.log(course);
+			// 		getToGive();
+			// 	} else if (btnGetId == 'CASHRUB') {
+			// 		course = result[btnGiveId][btnGetId].MSK.send;
+			// 		console.log(course);
+			// 		getToGive();
+			// 	} else if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
+			// 		course = result[btnGiveId][btnGetId].Cashless.send;
+			// 		console.log(course);
+			// 		giveToGet();
+			// 	} else if (btnGiveId == 'CASHRUB') {
+			// 		course = result[btnGiveId][btnGetId].MSK.send;
+			// 		console.log(course);
+			// 		giveToGet();
+			// 	}
+			// } else
+			if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
 				course = result[btnGiveId][btnGetId].Cashless.send;
 				console.log(course);
 				getToGive();
@@ -156,7 +165,35 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 				course = result[btnGiveId][btnGetId].Cashless.get;
 				console.log(course);
 				giveToGet();
+
+			} else if ((btnGetId == 'ALPCNY') || (btnGetId == 'WIRECNY')) {
+				course = result[btnGiveId][btnGetId].Cashless.get_best;
+				console.log(course);
+				giveToGet();
+
+
+			} else if ((btnGiveId == 'CASHRUB')) {
+				course = result[btnGiveId][btnGetId].MSK.send;
+				console.log(course);
+				getToGive();
+
+			} else if ((btnGetId == 'CASHRUB')) {
+				course = result[btnGiveId][btnGetId].MSK.get;
+				console.log(course);
+				giveToGet();
+
+			} else if ((btnGiveId == 'CASHUSD')) {
+				course = result[btnGiveId][btnGetId].MSK.send;
+				console.log(course);
+				getToGive();
+
+			} else if ((btnGetId == 'CASHUSD')) {
+				course = result[btnGiveId][btnGetId].MSK.get;
+				console.log(course);
+				giveToGet();
+
 			}
+
 
 			// if (buttonSelector == giveButtons) {
 			// 	giveToGet();
