@@ -469,8 +469,15 @@ html {
 }
 
 .exchanger-table__left-body .block-btn {
+	width: 60px;
 	margin-right: 13px;
 	margin-bottom: 12px;
+}
+
+.exchanger-table__left-body .block-btn__text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .exchanger-table__left-body .block-btn__img {
@@ -587,7 +594,8 @@ html {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-bottom: 78px;
+	margin-top: 40px;
+	margin-bottom: 158px;
 }
 
 .exchanger-table__left-body .attention-text {
@@ -760,6 +768,14 @@ html {
 
 .exchanger-table__right-body .block-btn {
 	margin-right: 13px;
+	margin-bottom: 12px;
+	width: 60px;
+}
+
+.exchanger-table__right-body .block-btn__text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .exchanger-table__right-body .block-btn__img {

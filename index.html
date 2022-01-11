@@ -131,7 +131,7 @@
 					<div class="exchanger-table__left-body ">
 						<div id="all" class="block _anim-item-text anim_icon">
 							<div class="block-btn active-button-effect " data-side="give" data-btnId="USDTTRC"
-								data-moneyType="cryptoPlus">
+								data-moneyType="cryptoPlus" data-USD="getFull">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -143,43 +143,50 @@
 								</div>
 								<div class="block-btn__text">Наличные USD</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="USDTERC" data-moneyType="cryptoPlus">
+							<div class="block-btn" data-side="give" data-btnId="USDTERC" data-moneyType="cryptoPlus"
+								data-USD="getFull">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Tether ERC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BTC" data-moneyType="crypto">
+							<div class="block-btn" data-side="give" data-btnId="BTC" data-moneyType="crypto"
+								data-USD="getFull">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Bitcoin (BTC)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="ETH" data-moneyType="crypto">
+							<div class="block-btn" data-USD="getFull" data-side="give" data-btnId="ETH"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Ethereum (ETH)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BCH" data-moneyType="crypto">
+							<div class="block-btn" data-side="give" data-btnId="BCH" data-moneyType="crypto"
+								data-USD="getPeace">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">BitcoinCash (BCH)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="LTC" data-moneyType="crypto">
+							<div class="block-btn" data-side="give" data-btnId="LTC" data-moneyType="crypto"
+								data-USD="getPeace">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Litecoin (LTC)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="ADA" data-moneyType="crypto">
+							<div class="block-btn" data-side="give" data-btnId="ADA" data-moneyType="crypto"
+								data-USD="getPeace">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Cardano (ADA)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BNB" data-moneyType="crypto">
+							<div class="block-btn" data-side="give" data-btnId="BNB" data-moneyType="crypto"
+								data-USD="getPeace">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -243,14 +250,16 @@
 							</div>
 						</div>
 
-						<div class="city">
-							<div class="city-text active">Киев</div>
-							<div class="city-text">Москва</div>
-							<div class="city-text">Одесса</div>
-							<div class="city-text">Лос-Анджелес</div>
-							<div class="city-text">Львов</div>
-							<div class="city-text">Нью-Йорк</div>
-							<div class="city-text">Майами</div>
+						<div class="city" id="cityGive">
+							<div class="city-text active" data-city="give" data-cityGive="KIEV" data-show="peace">Киев</div>
+							<div class="city-text" data-city="give" data-cityGive="MSK" data-show="peace">Москва</div>
+							<div class="city-text" data-city="give" data-cityGive="ODS" data-show="peace">Одесса</div>
+							<div class="city-text" data-city="give" data-cityGive="LOSAN">Лос-Анджелес</div>
+							<div class="city-text" data-city="give" data-cityGive="LVOV" data-show="peace">Львов</div>
+							<div class="city-text" data-city="give" data-cityGive="NYC">Нью-Йорк</div>
+							<div class="city-text" data-city="give" data-cityGive="MIAMI">Майами</div>
+							<div class="city-text" data-city="give" data-cityGive="DUBAI">Дубай</div>
+							<div class="city-text" data-city="give" data-cityGive="KISH" data-show="peace">Кишенёв</div>
 						</div>
 
 						<div class="attention">
@@ -301,7 +310,8 @@
 					</div>
 					<div class="exchanger-table__right-body">
 						<div id="all-right" class="block _anim-item-text anim_icon">
-							<div class="block-btn " data-side="get" data-btnGetId="CASHUSD" data-moneyType="cash">
+							<div class="block-btn " data-side="get" data-btnGetId="CASHUSD" data-moneyType="cash"
+								active-button-effect>
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -319,8 +329,7 @@
 								</div>
 								<div class="block-btn__text">Visa/MasterCard UAH</div>
 							</div>
-							<div class="block-btn active-button-effect" data-side="get" data-btnGetId="CARDRUB"
-								data-moneyType="cash">
+							<div class="block-btn " data-side="get" data-btnGetId="CARDRUB" data-moneyType="cash">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -338,49 +347,57 @@
 								</div>
 								<div class="block-btn__text">Любой банк CNY</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="USDTTRC" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Tether TRC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="USDTERC" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="USDTERC" data-USD="getFull"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Tether ERC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BTC" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="BTC" data-USD="getFull"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Bitcoin (BTC)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ETH" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="ETH" data-USD="getFull"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Ethereum (ETH)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BCH" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="BCH" data-USD="getPeace"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">BitcoinCash (BCH)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="LTC" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="LTC" data-USD="getPeace"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Litecoin (LTC)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ADA" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="ADA" data-USD="getPeace"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
 								<div class="block-btn__text">Cardano (ADA)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BNB" data-moneyType="crypto">
+							<div class="block-btn" data-side="get" data-btnGetId="BNB" data-USD="getPeace"
+								data-moneyType="crypto">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -400,7 +417,7 @@
 								<div class="dropdown">
 									<div class="select" id="selectGet">
 										<img src="/img/icon-valute.svg" alt="" />
-										<span>CARDRUB</span>
+										<span>CASHUSD</span>
 										<i class="fa fa-chevron-left"></i>
 									</div>
 									<input type="hidden" name="gender" />
@@ -424,14 +441,16 @@
 							</div>
 						</div>
 
-						<div class="city">
-							<div class="city-text active">Киев</div>
-							<div class="city-text">Москва</div>
-							<div class="city-text">Одесса</div>
-							<div class="city-text">Лос-Анджелес</div>
-							<div class="city-text">Львов</div>
-							<div class="city-text">Нью-Йорк</div>
-							<div class="city-text">Майами</div>
+						<div class="city" id="cityGet">
+							<div class="city-text active" data-show="peace" data-city="get" data-cityGet="KIEV">Киев</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="MSK">Москва</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="ODS">Одесса</div>
+							<div class="city-text" data-city="get" data-cityGet="LOSAN">Лос-Анджелес</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="LVOV">Львов</div>
+							<div class="city-text" data-city="get" data-cityGet="NYC">Нью-Йорк</div>
+							<div class="city-text" data-city="get" data-cityGet="MIAMI">Майами</div>
+							<div class="city-text" data-city="get" data-cityGet="DUBAI">Дубай</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="KISH">Кишенёв</div>
 						</div>
 
 						<div class="attention-mob">
