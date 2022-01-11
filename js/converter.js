@@ -70,6 +70,17 @@ function removeCityActiveClass(selector) {
 	});
 }
 
+function attention() {
+	document.querySelector('#giveNumber').innerHTML = inputGive.value;
+	document.querySelector('#getNumber').innerHTML = inputGet.value;
+	document.querySelector('#giveCurrency').innerHTML = selectGive.innerHTML;
+	document.querySelector('#getCurrency').innerHTML = selectGet.innerHTML;
+	document.querySelector('[data-attantionId="giveNumber"]').innerHTML = inputGive.value;
+	document.querySelector('[data-attantionId="getNumber"]').innerHTML = inputGet.value;
+	document.querySelector('[data-attantionId="giveCurrency"]').innerHTML = selectGive.innerHTML;
+	document.querySelector('[data-attantionId="getCurrency"]').innerHTML = selectGet.innerHTML;
+}
+
 
 function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 	buttonSelector.forEach(el => {
@@ -244,6 +255,7 @@ function listToButtons(listName, buttonSelector, elementSelector, side) {
 		el.addEventListener('click', ev => {
 			removeActiveClass(side);
 			document.querySelector(`[${buttonSelector}="${el.getAttribute(elementSelector)}"]`).classList.add('active-button-effect');
+
 		});
 	});
 }
@@ -254,7 +266,7 @@ function giveToGet() {
 	} else {
 		inputGet.value = inputGive.value * course;
 	}
-
+	attention();
 }
 
 function getToGive() {
@@ -263,6 +275,7 @@ function getToGive() {
 	} else {
 		inputGive.value = inputGet.value / course;
 	}
+	attention();
 }
 
 function selectCity(selector, attribute) {
