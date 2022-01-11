@@ -265,6 +265,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 				getToGive();
 
 			} else if ((btnGetId == 'CASHUSD')) {
+				course = result[btnGiveId][btnGetId][city].get;
 				reserveNumber.innerHTML = result[btnGiveId][btnGetId][city].reserve;
 				currencyGet.innerHTML = course;
 				currencyGive.innerHTML = 1;
@@ -272,8 +273,6 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 				giveToGet();
 
 			}
-			console.log(btnGetId);
-
 
 			document.querySelector('#reserveCurrency').innerHTML = selectGet.innerHTML;
 
@@ -353,5 +352,5 @@ listToButtons(moneyListGet, 'data-btnGetId', 'data-listGetId', getButtons);
 selectCity(getCities, 'data-cityGet');
 selectCity(giveCities, 'data-cityGive');
 
-document.querySelector('[data-btnGetId="CASHUSD"]').classList.add('active-button-effect');
+// document.querySelector('[data-btnGetId="CASHUSD"]').classList.add('active-button-effect');
 // console.log(result.BTC.CASHRUB.MSK.get);

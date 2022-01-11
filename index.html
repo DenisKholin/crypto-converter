@@ -217,7 +217,6 @@
 								<div class="block-btn__text">Visa/MasterCard RUB</div>
 							</div>
 						</div>
-
 						<div class="input">
 							<input class="input-text" id="inputGive" type="number" value="0" />
 							<div class="container">
@@ -229,19 +228,33 @@
 									</div>
 									<input type="hidden" name="gender" />
 									<ul class="dropdown-menu" id="dropdownGive">
-										<li data-listId="USDTTRC">USDTTRC</li>
-										<li data-listId="USDTERC">USDTERC</li>
-										<li data-listId="ADA">ADA</li>
-										<li data-listId="ADVCUSD">ADVCUSD</li>
-										<li data-listId="BCH">BCH</li>
-										<li data-listId="BNB">BNB</li>
-										<li data-listId="BTC">BTC</li>
-										<li data-listId="CARDRUB">CARDRUB</li>
-										<li data-listId="CARDUAH">CARDUAH</li>
-										<li data-listId="CASHRUB">CASHRUB</li>
-										<li data-listId="ETH">ETH</li>
-										<li data-listId="CASHUSD">CASHUSD</li>
-										<li data-listId="LTC">LTC</li>
+										<li data-listId="USDTTRC" data-side="give" data-btnId="USDTTRC"
+											data-moneyType="cryptoPlus" data-USD="getFull">USDTTRC</li>
+										<li data-listId="USDTERC" data-side="give" data-btnId="USDTERC"
+											data-moneyType="cryptoPlus" data-USD="getFull">USDTERC</li>
+										<li data-listId="ADA" data-side="give" data-btnId="ADA" data-moneyType="crypto"
+											data-USD="getPeace">ADA</li>
+										<li data-listId="ADVCUSD" data-side="give" data-btnId="ADVCUSD" data-moneyType="payment">
+											ADVCUSD</li>
+										<li data-listId="BCH" data-side="give" data-btnId="BCH" data-moneyType="crypto"
+											data-USD="getPeace">BCH</li>
+										<li data-listId="BNB" data-side="give" data-btnId="BNB" data-moneyType="crypto"
+											data-USD="getPeace">BNB</li>
+										<li data-listId="BTC" data-side="give" data-btnId="BTC" data-moneyType="crypto"
+											data-USD="getFull">BTC</li>
+										<li data-listId="CARDRUB" data-side="give" data-btnId="CARDRUB" data-moneyType="cash">
+											CARDRUB</li>
+										<li data-listId="CARDUAH" data-side="give" data-btnId="CARDUAH" data-moneyType="cash">
+											CARDUAH</li>
+										<li data-listId="CASHRUB" data-side="give" data-btnId="CASHRUB" data-moneyType="cash">
+											<div class="block-btn__img">CASHRUB
+										</li>
+										<li data-listId="ETH" data-USD="getFull" data-side="give" data-btnId="ETH"
+											data-moneyType="crypto">ETH</li>
+										<li data-listId="CASHUSD" data-side="give" data-btnId="CASHUSD" data-moneyType="cash">
+											CASHUSD</li>
+										<li data-listId="LTC" data-side="give" data-btnId="LTC" data-moneyType="crypto"
+											data-USD="getPeace">LTC</li>
 
 
 									</ul>
@@ -311,8 +324,8 @@
 					</div>
 					<div class="exchanger-table__right-body">
 						<div id="all-right" class="block _anim-item-text anim_icon">
-							<div class="block-btn " data-side="get" data-btnGetId="CASHUSD" data-moneyType="cash"
-								active-button-effect>
+							<div class="block-btn active-button-effect" data-side="get" data-btnGetId="CASHUSD"
+								data-moneyType="cash">
 								<div class="block-btn__img">
 									<img src="./img/bitcoin-icon-small.svg" alt="" />
 								</div>
@@ -423,19 +436,38 @@
 									</div>
 									<input type="hidden" name="gender" />
 									<ul class="dropdown-menu" id="dropdownGet">
-										<li data-listGetId="USDTTRC">USDTTRC</li>
-										<li data-listGetId="USDTERC">USDTERC</li>
-										<li data-listGetId="ADA">ADA</li>
-										<li data-listGetId="ADVCUSD">ADVCUSD</li>
-										<li data-listGetId="BCH">BCH</li>
-										<li data-listGetId="BNB">BNB</li>
-										<li data-listGetId="BTC">BTC</li>
-										<li data-listGetId="CARDRUB">CARDRUB</li>
-										<li data-listGetId="CARDUAH">CARDUAH</li>
-										<li data-listGetId="CASHRUB">CASHRUB</li>
-										<li data-listGetId="ETH">ETH</li>
-										<li data-listGetId="CASHUSD">CASHUSD</li>
-										<li data-listGetId="LTC">LTC</li>
+										<li data-listGetId="USDTTRC" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
+											data-moneyType="crypto">USDTTRC</li>
+										<li data-listGetId="USDTERC" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
+											data-moneyType="crypto">USDTERC</li>
+										<li data-listGetId="ADA" data-side="get" data-btnGetId="ADA" data-USD="getPeace"
+											data-moneyType="crypto">ADA</li>
+										<li data-listGetId="ADVCUSD" data-side="get" data-btnGetId="ADVCUSD"
+											data-moneyType="payment">
+											<div class="block-btn__img">ADVCUSD
+										</li>
+										<li data-listGetId="BCH" data-side="get" data-btnGetId="BCH" data-USD="getPeace"
+											data-moneyType="crypto">BCH</li>
+										<li data-listGetId="BNB" data-side="get" data-btnGetId="BNB" data-USD="getPeace"
+											data-moneyType="crypto">BNB</li>
+										<li data-listGetId="BTC" data-side="get" data-btnGetId="BTC" data-USD="getFull"
+											data-moneyType="crypto">BTC</li>
+										<li data-listGetId="ALPCNY" data-side="get" data-btnGetId="ALPCNY"
+											data-moneyType="cashPlus">ALPCNY</li>
+										<li data-listGetId="WIRECNY" data-side="get" data-btnGetId="WIRECNY"
+											data-moneyType="cashPlus">WIRECNY</li>
+										<li data-listGetId="CARDRUB" data-side="get" data-btnGetId="CARDRUB"
+											data-moneyType="cash">CARDRUB</li>
+										<li data-listGetId="CARDUAH" data-side="get" data-btnGetId="CARDUAH"
+											data-moneyType="cash">CARDUAH</li>
+										<li data-listGetId="CASHRUB" data-side="get" data-btnGetId="CASHRUB"
+											data-moneyType="cash">CASHRUB</li>
+										<li data-listGetId="ETH" data-side="get" data-btnGetId="ETH" data-USD="getFull"
+											data-moneyType="crypto">ETH</li>
+										<li data-listGetId="CASHUSD" data-side="get" data-btnGetId="CASHUSD"
+											data-moneyType="cash">CASHUSD</li>
+										<li data-listGetId="LTC" data-side="get" data-btnGetId="LTC" data-USD="getPeace"
+											data-moneyType="crypto">LTC</li>
 									</ul>
 								</div>
 								<!-- <span class="msg"></span> -->
