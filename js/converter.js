@@ -8,8 +8,10 @@ const
 	getButtons = document.querySelectorAll('[data-side="get"]'),
 	allCities = document.querySelectorAll('.city-text'),
 	giveCities = document.querySelectorAll('[data-city="give"]'),
-	getCities = document.querySelectorAll('[data-city="get"]');
-
+	getCities = document.querySelectorAll('[data-city="get"]'),
+	reserveNumber = document.querySelector('#reserveNumber'),
+	currencyGive = document.querySelector('#currencyGive'),
+	currencyGet = document.querySelector('#currencyGet');
 
 let
 	inputGive = document.querySelector('#inputGive'),
@@ -87,6 +89,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 		el.addEventListener('click', ev => {
 			trigger = 0;
 
+
 			if (el.getAttribute('data-side') == 'give') {
 				if (el.getAttribute('data-moneyType') == 'cryptoPlus') {
 					getButtons.forEach(e => {
@@ -155,13 +158,14 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 					elem.style.display = 'flex';
 				});
 				hideCities(giveCities);
+
 			} else if (el.getAttribute('data-USD') == 'getPeace' && btnGetId == 'CASHUSD') {
 				hideCities(getCities);
 				document.querySelectorAll('[data-show="peace"]').forEach(elem => {
 					elem.style.display = 'flex';
 				});
 				hideCities(giveCities);
-			} else if (el.getAttribute('data-side') == 'give') {
+			} else if (el.getAttribute('data-side') == 'give' && el.getAttribute('data-btnId') !== 'CASHUSD') {
 				hideCities(allCities);
 			}
 			else
@@ -178,7 +182,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 						elem.style.display = 'flex';
 					});
 					hideCities(getCities);
-				} else if (el.getAttribute('data-side') == 'get') {
+				} else if (el.getAttribute('data-side') == 'get' && el.getAttribute('data-btnGetId') !== 'CASHUSD') {
 					hideCities(allCities);
 				}
 
@@ -190,51 +194,80 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 
 			if ((btnGiveId == 'CARDRUB') || (btnGiveId == 'CARDUAH')) {
 				course = result[btnGiveId][btnGetId].Cashless.send;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].Cashless.reserve;
+				currencyGive.innerHTML = course;
+				currencyGet.innerHTML = 1;
 				console.log(course);
 				getToGive();
 
 			} else if ((btnGetId == 'CARDRUB') || (btnGetId == 'CARDUAH')) {
 				course = result[btnGiveId][btnGetId].Cashless.get;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].Cashless.reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if (btnGiveId == 'ADVCUSD') {
 				course = result[btnGiveId][btnGetId].ODS.get;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].ODS.reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if (btnGetId == 'ADVCUSD') {
 				course = result[btnGiveId][btnGetId].ODS.send;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].ODS.reserve;
+				currencyGive.innerHTML = course;
+				currencyGet.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if ((btnGetId == 'ALPCNY' || btnGetId == 'WIRECNY') && btnGiveId == 'CASHUSD') {
 				course = result[btnGiveId][btnGetId].KIEV.get_best;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].KIEV.reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if ((btnGetId == 'ALPCNY') || (btnGetId == 'WIRECNY')) {
 				course = result[btnGiveId][btnGetId].Cashless.get_best;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].Cashless.reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if ((btnGiveId == 'CASHRUB')) {
 				course = result[btnGiveId][btnGetId].MSK.send;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].MSK.reserve;
+				currencyGive.innerHTML = course;
+				currencyGet.innerHTML = 1;
 				console.log(course);
 				getToGive();
 
 			} else if ((btnGetId == 'CASHRUB')) {
 				course = result[btnGiveId][btnGetId].MSK.get;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId].MSK.reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
 			} else if ((btnGiveId == 'CASHUSD')) {
 				course = result[btnGiveId][btnGetId][city].send;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId][city].reserve;
+				currencyGive.innerHTML = course;
+				currencyGet.innerHTML = 1;
 				console.log(course);
 				getToGive();
 
 			} else if ((btnGetId == 'CASHUSD')) {
-				course = result[btnGiveId][btnGetId][city].get;
+				reserveNumber.innerHTML = result[btnGiveId][btnGetId][city].reserve;
+				currencyGet.innerHTML = course;
+				currencyGive.innerHTML = 1;
 				console.log(course);
 				giveToGet();
 
@@ -242,6 +275,7 @@ function selectButton(buttonSelector, btnId, btnAtrribute, dataSide, select) {
 			console.log(btnGetId);
 
 
+			document.querySelector('#reserveCurrency').innerHTML = selectGet.innerHTML;
 
 			removeActiveClass(buttonSelector);
 			el.classList.add('active-button-effect');
@@ -319,4 +353,5 @@ listToButtons(moneyListGet, 'data-btnGetId', 'data-listGetId', getButtons);
 selectCity(getCities, 'data-cityGet');
 selectCity(giveCities, 'data-cityGive');
 
+document.querySelector('[data-btnGetId="CASHUSD"]').classList.add('active-button-effect');
 // console.log(result.BTC.CASHRUB.MSK.get);
