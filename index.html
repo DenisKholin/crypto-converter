@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>KOI exchanger - безопасный обмен электронных валют</title>
 	<link rel="icon" href="./img/icons/favicon.svg" type="image/x-icon" />
-	<link rel="stylesheet" href="./css/main.scss" />
 	<link rel="stylesheet" href="./css/main.css" />
 </head>
 
@@ -53,11 +52,30 @@
 			<div class="line">
 				<a id="start" class="start"><img src="./img/Play.png" /></a>
 				<a id="stop" class="stop pause" href="#0"><img src="./img/icons/pause.svg" alt="" /></a>
-				<marquee id="beg" scrolldelay="200" onmouseover="this.scrollDelay=70" onmouseout="this.scrollDelay=200"
-					behavior="scroll" direction="left">
-					<div class="line-scroll">
+				<div class="marquee-wrapper">
+					<div class="line-scroll marquee">
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">USDTTRC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">USDTERC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">ADA</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BCH</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">ADVCUSD</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BNB</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
@@ -65,39 +83,15 @@
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">LTC</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">ETH</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 					</div>
-				</marquee>
+				</div>
 			</div>
 		</section>
 
@@ -115,104 +109,110 @@
 						<div class="exchanger-text">Отдаете:</div>
 						<div class="exchanger-list">
 							<div id="btnAll" class="exchanger-list__text active-btn">
-								<a href="#">ВСЕ</a>
+								<a onclick="event.preventDefault()" href="#">ВСЕ</a>
 							</div>
 							<div id="btnCash" class="exchanger-list__text">
-								<a href="#">CASH</a>
+								<a onclick="event.preventDefault()" href="#">CASH</a>
 							</div>
-							<div id="btncCashless" class="exchanger-list__text">
-								<a href="#">CASHLESS</a>
+							<div id="btnCashless" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CASHLESS</a>
 							</div>
 							<div id="btnCrypto" class="exchanger-list__text">
-								<a href="#">CRYPTO</a>
+								<a onclick="event.preventDefault()" href="#">CRYPTO</a>
+							</div>
+							<div id="btnPayment" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">PAYMANT</a>
+							</div>
+							<div id="btnCNY" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CNY</a>
 							</div>
 						</div>
 					</div>
-					<div class="exchanger-table__left-body ">
+					<div class="exchanger-table__left-body">
 						<div id="all" class="block _anim-item-text anim_icon">
-							<div class="block-btn active-button-effect " data-side="give" data-btnId="USDTTRC"
+							<div class="block-btn crypto fade active-button-effect" data-side="give" data-btnId="USDTTRC"
 								data-moneyType="cryptoPlus" data-USD="getFull">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/USDTTRC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Tether TRC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="CASHUSD" data-moneyType="cash">
+							<div class="block-btn cash fade" data-side="give" data-btnId="CASHUSD" data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CASHUSD.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Наличные USD</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="USDTERC" data-moneyType="cryptoPlus"
-								data-USD="getFull">
+							<div class="block-btn crypto fade" data-side="give" data-btnId="USDTERC"
+								data-moneyType="cryptoPlus" data-USD="getFull">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/USDTERC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Tether ERC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BTC" data-moneyType="crypto"
+							<div class="block-btn crypto fade" data-side="give" data-btnId="BTC" data-moneyType="crypto"
 								data-USD="getFull">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BTC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Bitcoin (BTC)</div>
 							</div>
-							<div class="block-btn" data-USD="getFull" data-side="give" data-btnId="ETH"
+							<div class="block-btn crypto fade" data-USD="getFull" data-side="give" data-btnId="ETH"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ETH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Ethereum (ETH)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BCH" data-moneyType="crypto"
+							<div class="block-btn crypto fade" data-side="give" data-btnId="BCH" data-moneyType="crypto"
 								data-USD="getPeace">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BCH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">BitcoinCash (BCH)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="LTC" data-moneyType="crypto"
+							<div class="block-btn crypto fade" data-side="give" data-btnId="LTC" data-moneyType="crypto"
 								data-USD="getPeace">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/LTC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Litecoin (LTC)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="ADA" data-moneyType="crypto"
+							<div class="block-btn crypto fade" data-side="give" data-btnId="ADA" data-moneyType="crypto"
 								data-USD="getPeace">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ADA.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Cardano (ADA)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="BNB" data-moneyType="crypto"
+							<div class="block-btn crypto fade" data-side="give" data-btnId="BNB" data-moneyType="crypto"
 								data-USD="getPeace">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BNB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Binance Coin (BNB)</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="CASHRUB" data-moneyType="cash">
+							<div class="block-btn cash fade" data-side="give" data-btnId="CASHRUB" data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CASHRUB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Наличные RUB</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="ADVCUSD" data-moneyType="payment">
+							<div class="block-btn payment fade" data-side="give" data-btnId="ADVCUSD" data-moneyType="payment">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ADVCUSD.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Advanced Cash USD</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="CARDUAH" data-moneyType="cash">
+							<div class="block-btn cashless fade" data-side="give" data-btnId="CARDUAH" data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CARDUAH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Visa/MasterCard UAH</div>
 							</div>
-							<div class="block-btn" data-side="give" data-btnId="CARDRUB" data-moneyType="cash">
+							<div class="block-btn cashless fade" data-side="give" data-btnId="CARDRUB" data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CARDRUB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Visa/MasterCard RUB</div>
 							</div>
@@ -222,41 +222,59 @@
 							<div class="container">
 								<div class="dropdown">
 									<div class="select" id="selectGive">
-										<img src="/img/icon-valute.svg" alt="" />
+										<img src="/img/currency/USDTTRC.webp" alt="" />
 										<span>USDTTRC</span>
 										<i class="fa fa-chevron-left"></i>
 									</div>
 									<input type="hidden" name="gender" />
 									<ul class="dropdown-menu" id="dropdownGive">
 										<li data-listId="USDTTRC" data-side="give" data-btnId="USDTTRC"
-											data-moneyType="cryptoPlus" data-USD="getFull">USDTTRC</li>
+											data-moneyType="cryptoPlus" data-USD="getFull">
+											<img class="icon-left" src="/img/currency/USDTTRC.webp" alt="" />USDTTRC
+										</li>
 										<li data-listId="USDTERC" data-side="give" data-btnId="USDTERC"
-											data-moneyType="cryptoPlus" data-USD="getFull">USDTERC</li>
+											data-moneyType="cryptoPlus" data-USD="getFull">
+											<img class="icon-left" src="/img/currency/USDTERC.webp" alt="" />USDTERC
+										</li>
 										<li data-listId="ADA" data-side="give" data-btnId="ADA" data-moneyType="crypto"
-											data-USD="getPeace">ADA</li>
+											data-USD="getPeace">
+											<img class="icon-left" src="/img/currency/ADA.webp" alt="" />ADA
+										</li>
 										<li data-listId="ADVCUSD" data-side="give" data-btnId="ADVCUSD" data-moneyType="payment">
-											ADVCUSD</li>
+											<img class="icon-left" src="/img/currency/ADVCUSD.webp" alt="" />ADVCUSD
+										</li>
 										<li data-listId="BCH" data-side="give" data-btnId="BCH" data-moneyType="crypto"
-											data-USD="getPeace">BCH</li>
+											data-USD="getPeace">
+											<img class="icon-left" src="/img/currency/BCH.webp" alt="" />BCH
+										</li>
 										<li data-listId="BNB" data-side="give" data-btnId="BNB" data-moneyType="crypto"
-											data-USD="getPeace">BNB</li>
+											data-USD="getPeace">
+											<img class="icon-left" src="/img/currency/BNB.webp" alt="" />BNB
+										</li>
 										<li data-listId="BTC" data-side="give" data-btnId="BTC" data-moneyType="crypto"
-											data-USD="getFull">BTC</li>
+											data-USD="getFull">
+											<img class="icon-left" src="/img/currency/BTC.webp" alt="" />BTC
+										</li>
 										<li data-listId="CARDRUB" data-side="give" data-btnId="CARDRUB" data-moneyType="cash">
-											CARDRUB</li>
+											<img class="icon-left" src="/img/currency/CARDRUB.webp" alt="" />CARDRUB
+										</li>
 										<li data-listId="CARDUAH" data-side="give" data-btnId="CARDUAH" data-moneyType="cash">
-											CARDUAH</li>
+											<img class="icon-left" src="/img/currency/CARDUAH.webp" alt="" />CARDUAH
+										</li>
 										<li data-listId="CASHRUB" data-side="give" data-btnId="CASHRUB" data-moneyType="cash">
-											<div class="block-btn__img">CASHRUB
+											<img class="icon-left" src="/img/currency/CASHRUB.webp" alt="" />CASHRUB
 										</li>
 										<li data-listId="ETH" data-USD="getFull" data-side="give" data-btnId="ETH"
-											data-moneyType="crypto">ETH</li>
+											data-moneyType="crypto">
+											<img class="icon-left" src="/img/currency/ETH.webp" alt="" />ETH
+										</li>
 										<li data-listId="CASHUSD" data-side="give" data-btnId="CASHUSD" data-moneyType="cash">
-											CASHUSD</li>
+											<img class="icon-left" src="/img/currency/CASHUSD.webp" alt="" />CASHUSD
+										</li>
 										<li data-listId="LTC" data-side="give" data-btnId="LTC" data-moneyType="crypto"
-											data-USD="getPeace">LTC</li>
-
-
+											data-USD="getPeace">
+											<img class="icon-left" src="/img/currency/LTC.webp" alt="" />LTC
+										</li>
 									</ul>
 								</div>
 								<!-- <span class="msg"></span> -->
@@ -264,23 +282,43 @@
 						</div>
 
 						<div class="city" id="cityGive">
-							<div class="city-text active" data-city="give" data-cityGive="KIEV" data-show="peace">Киев</div>
-							<div class="city-text" data-city="give" data-cityGive="MSK" data-show="peace">Москва</div>
-							<div class="city-text" data-city="give" data-cityGive="ODS" data-show="peace">Одесса</div>
-							<div class="city-text" data-city="give" data-cityGive="LOSAN">Лос-Анджелес</div>
-							<div class="city-text" data-city="give" data-cityGive="LVOV" data-show="peace">Львов</div>
-							<div class="city-text" data-city="give" data-cityGive="NYC">Нью-Йорк</div>
-							<div class="city-text" data-city="give" data-cityGive="MIAMI">Майами</div>
-							<div class="city-text" data-city="give" data-cityGive="DUBAI">Дубай</div>
-							<div class="city-text" data-city="give" data-cityGive="KISH" data-show="peace">Кишенёв</div>
+							<div class="city-text active" data-city="give" data-cityGive="KIEV" data-show="peace">
+								Киев
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="MSK" data-show="peace">
+								Москва
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="ODS" data-show="peace">
+								Одесса
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="LOSAN">
+								Лос-Анджелес
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="LVOV" data-show="peace">
+								Львов
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="NYC">
+								Нью-Йорк
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="MIAMI">
+								Майами
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="DUBAI">
+								Дубай
+							</div>
+							<div class="city-text" data-city="give" data-cityGive="KISH" data-show="peace">
+								Кишенёв
+							</div>
 						</div>
 
 						<div class="attention">
 							<img src="./img/attention.svg" alt="" />
 							<div class="attention-text">
-								<span id="giveNumber">0</span> <span id="giveCurrency">USDTTRC</span> должно быть у вас на
-								счету<br />Фактическая
-								сумма к получению: <span id="getNumber">0</span> <span id="getCurrency">CASHUSD</span>
+								<span id="giveNumber">0</span>
+								<span id="giveCurrency">USDTTRC</span> должно быть у вас на
+								счету<br />Фактическая сумма к получению:
+								<span id="getNumber">0</span>
+								<span id="getCurrency">CASHUSD</span>
 							</div>
 						</div>
 
@@ -308,118 +346,129 @@
 					<div class="exchanger-table__right-header">
 						<div class="exchanger-text">Получаете:</div>
 						<div class="exchanger-list">
-							<div id="btnAll-right" class="exchanger-list__text active-btn">
-								<a href="#">ВСЕ</a>
+							<div id="btnAllright" class="exchanger-list__text active-btn">
+								<a onclick="event.preventDefault()" href="#">ВСЕ</a>
 							</div>
-							<div id="btnCash-right" class="exchanger-list__text">
-								<a href="#">CASH</a>
+							<div id="btnCashright" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CASH</a>
 							</div>
-							<div id="btncCashless-right" class="exchanger-list__text">
-								<a href="#">CASHLESS</a>
+							<div id="btnCashlessright" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CASHLESS</a>
 							</div>
-							<div id="btnCrypto-right" class="exchanger-list__text">
-								<a href="#">CRYPTO</a>
+							<div id="btnCryptoright" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CRYPTO</a>
+							</div>
+							<div id="btnPaymentright" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">PAYMANT</a>
+							</div>
+							<div id="btnCNYright" class="exchanger-list__text">
+								<a onclick="event.preventDefault()" href="#">CNY</a>
 							</div>
 						</div>
 					</div>
 					<div class="exchanger-table__right-body">
 						<div id="all-right" class="block _anim-item-text anim_icon">
-							<div class="block-btn active-button-effect" data-side="get" data-btnGetId="CASHUSD"
+							<div class="block-btn cash-right active-button-effect" data-side="get" data-btnGetId="CASHUSD"
 								data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CASHUSD.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Наличные USD</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="CASHRUB" data-moneyType="cash">
+							<div class="block-btn cash-right" data-side="get" data-btnGetId="CASHRUB" data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CASHRUB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Наличные RUB</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="CARDUAH" data-moneyType="cash">
+							<div class="block-btn cashless-right" data-side="get" data-btnGetId="CARDUAH"
+								data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CARDUAH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Visa/MasterCard UAH</div>
 							</div>
-							<div class="block-btn " data-side="get" data-btnGetId="CARDRUB" data-moneyType="cash">
+							<div class="block-btn cashless-right cashless-right" data-side="get" data-btnGetId="CARDRUB"
+								data-moneyType="cash">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/CARDRUB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Visa/MasterCard RUB</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ALPCNY" data-moneyType="cashPlus">
+							<div class="block-btn payment-right cny-right" data-side="get" data-btnGetId="ALPCNY"
+								data-moneyType="cashPlus">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ALPCNY.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Alipay</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="WIRECNY" data-moneyType="cashPlus">
+							<div class="block-btn cashless-right cny-right" data-side="get" data-btnGetId="WIRECNY"
+								data-moneyType="cashPlus">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/WIRECNY.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Любой банк CNY</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/USDTTRC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Tether TRC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="USDTERC" data-USD="getFull"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="USDTERC" data-USD="getFull"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/USDTERC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Tether ERC20 (USDT)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BTC" data-USD="getFull"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="BTC" data-USD="getFull"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BTC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Bitcoin (BTC)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ETH" data-USD="getFull"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="ETH" data-USD="getFull"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ETH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Ethereum (ETH)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BCH" data-USD="getPeace"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="BCH" data-USD="getPeace"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BCH.webp" alt="" />
 								</div>
 								<div class="block-btn__text">BitcoinCash (BCH)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="LTC" data-USD="getPeace"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="LTC" data-USD="getPeace"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/LTC.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Litecoin (LTC)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ADA" data-USD="getPeace"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="ADA" data-USD="getPeace"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ADA.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Cardano (ADA)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="BNB" data-USD="getPeace"
+							<div class="block-btn crypto-right" data-side="get" data-btnGetId="BNB" data-USD="getPeace"
 								data-moneyType="crypto">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/BNB.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Binance Coin (BNB)</div>
 							</div>
-							<div class="block-btn" data-side="get" data-btnGetId="ADVCUSD" data-moneyType="payment">
+							<div class="block-btn payment-right" data-side="get" data-btnGetId="ADVCUSD"
+								data-moneyType="payment">
 								<div class="block-btn__img">
-									<img src="./img/bitcoin-icon-small.svg" alt="" />
+									<img src="./img/currency/ADVCUSD.webp" alt="" />
 								</div>
 								<div class="block-btn__text">Advanced Cash USD</div>
 							</div>
@@ -430,44 +479,72 @@
 							<div class="container">
 								<div class="dropdown">
 									<div class="select" id="selectGet">
-										<img src="/img/icon-valute.svg" alt="" />
-										<span>CASHUSD</span>
+										<img id="iconCurrency" src="/img/currency/CASHUSD.webp" alt="" />
+										<span id="currencyInput">CASHUSD</span>
 										<i class="fa fa-chevron-left"></i>
 									</div>
 									<input type="hidden" name="gender" />
 									<ul class="dropdown-menu" id="dropdownGet">
 										<li data-listGetId="USDTTRC" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
-											data-moneyType="crypto">USDTTRC</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/USDTTRC.webp" alt="" />USDTTRC
+										</li>
 										<li data-listGetId="USDTERC" data-side="get" data-btnGetId="USDTTRC" data-USD="getFull"
-											data-moneyType="crypto">USDTERC</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/USDTERC.webp" alt="" />USDTERC
+										</li>
 										<li data-listGetId="ADA" data-side="get" data-btnGetId="ADA" data-USD="getPeace"
-											data-moneyType="crypto">ADA</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/ADA.webp" alt="" />ADA
+										</li>
 										<li data-listGetId="ADVCUSD" data-side="get" data-btnGetId="ADVCUSD"
 											data-moneyType="payment">
-											<div class="block-btn__img">ADVCUSD
+											<img class="icon-right" src="/img/currency/ADVCUSD.webp" alt="" />ADVCUSD
 										</li>
 										<li data-listGetId="BCH" data-side="get" data-btnGetId="BCH" data-USD="getPeace"
-											data-moneyType="crypto">BCH</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/BCH.webp" alt="" />BCH
+										</li>
 										<li data-listGetId="BNB" data-side="get" data-btnGetId="BNB" data-USD="getPeace"
-											data-moneyType="crypto">BNB</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/BNB.webp" alt="" />BNB
+										</li>
 										<li data-listGetId="BTC" data-side="get" data-btnGetId="BTC" data-USD="getFull"
-											data-moneyType="crypto">BTC</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/BTC.webp" alt="" />BTC
+										</li>
 										<li data-listGetId="ALPCNY" data-side="get" data-btnGetId="ALPCNY"
-											data-moneyType="cashPlus">ALPCNY</li>
+											data-moneyType="cashPlus">
+											<img class="icon-right" src="/img/currency/ALPCNY.webp" alt="" />ALPCNY
+										</li>
 										<li data-listGetId="WIRECNY" data-side="get" data-btnGetId="WIRECNY"
-											data-moneyType="cashPlus">WIRECNY</li>
+											data-moneyType="cashPlus">
+											<img class="icon-right" src="/img/currency/WIRECNY.webp" alt="" />WIRECNY
+										</li>
 										<li data-listGetId="CARDRUB" data-side="get" data-btnGetId="CARDRUB"
-											data-moneyType="cash">CARDRUB</li>
+											data-moneyType="cash">
+											<img class="icon-right" src="/img/currency/CARDRUB.webp" alt="" />CARDRUB
+										</li>
 										<li data-listGetId="CARDUAH" data-side="get" data-btnGetId="CARDUAH"
-											data-moneyType="cash">CARDUAH</li>
+											data-moneyType="cash">
+											<img class="icon-right" src="/img/currency/CARDUAH.webp" alt="" />CARDUAH
+										</li>
 										<li data-listGetId="CASHRUB" data-side="get" data-btnGetId="CASHRUB"
-											data-moneyType="cash">CASHRUB</li>
+											data-moneyType="cash">
+											<img class="icon-right" src="/img/currency/CASHRUB.webp" alt="" />CASHRUB
+										</li>
 										<li data-listGetId="ETH" data-side="get" data-btnGetId="ETH" data-USD="getFull"
-											data-moneyType="crypto">ETH</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/ETH.webp" alt="" />ETH
+										</li>
 										<li data-listGetId="CASHUSD" data-side="get" data-btnGetId="CASHUSD"
-											data-moneyType="cash">CASHUSD</li>
+											data-moneyType="cash">
+											<img class="icon-right" src="/img/currency/CASHUSD.webp" alt="" />CASHUSD
+										</li>
 										<li data-listGetId="LTC" data-side="get" data-btnGetId="LTC" data-USD="getPeace"
-											data-moneyType="crypto">LTC</li>
+											data-moneyType="crypto">
+											<img class="icon-right" src="/img/currency/LTC.webp" alt="" />LTC
+										</li>
 									</ul>
 								</div>
 								<!-- <span class="msg"></span> -->
@@ -475,25 +552,43 @@
 						</div>
 
 						<div class="city" id="cityGet">
-							<div class="city-text active" data-show="peace" data-city="get" data-cityGet="KIEV">Киев</div>
-							<div class="city-text" data-show="peace" data-city="get" data-cityGet="MSK">Москва</div>
-							<div class="city-text" data-show="peace" data-city="get" data-cityGet="ODS">Одесса</div>
-							<div class="city-text" data-city="get" data-cityGet="LOSAN">Лос-Анджелес</div>
-							<div class="city-text" data-show="peace" data-city="get" data-cityGet="LVOV">Львов</div>
-							<div class="city-text" data-city="get" data-cityGet="NYC">Нью-Йорк</div>
-							<div class="city-text" data-city="get" data-cityGet="MIAMI">Майами</div>
-							<div class="city-text" data-city="get" data-cityGet="DUBAI">Дубай</div>
-							<div class="city-text" data-show="peace" data-city="get" data-cityGet="KISH">Кишенёв</div>
+							<div class="city-text active" data-show="peace" data-city="get" data-cityGet="KIEV">
+								Киев
+							</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="MSK">
+								Москва
+							</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="ODS">
+								Одесса
+							</div>
+							<div class="city-text" data-city="get" data-cityGet="LOSAN">
+								Лос-Анджелес
+							</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="LVOV">
+								Львов
+							</div>
+							<div class="city-text" data-city="get" data-cityGet="NYC">
+								Нью-Йорк
+							</div>
+							<div class="city-text" data-city="get" data-cityGet="MIAMI">
+								Майами
+							</div>
+							<div class="city-text" data-city="get" data-cityGet="DUBAI">
+								Дубай
+							</div>
+							<div class="city-text" data-show="peace" data-city="get" data-cityGet="KISH">
+								Кишенёв
+							</div>
 						</div>
 
 						<div class="attention-mob">
 							<img src="./img/attention.svg" alt="" />
 							<div class="attention-mob__text">
-								<span data-attantionId="giveNumber">0</span> <span
-									data-attantionId="giveCurrency">USDTTRC</span> должно быть у вас на
-								счету<br />Фактическая
-								сумма к получению: <span data-attantionId="getNumber">0</span> <span
-									data-attantionId="getCurrency">CASHUSD</span>
+								<span data-attantionId="giveNumber">0</span>
+								<span data-attantionId="giveCurrency">USDTTRC</span> должно
+								быть у вас на счету<br />Фактическая сумма к получению:
+								<span data-attantionId="getNumber">0</span>
+								<span data-attantionId="getCurrency">CASHUSD</span>
 							</div>
 						</div>
 
@@ -502,6 +597,19 @@
 								<div class="well-timer">
 									<div class="well-timer__sec">
 										<div id="countdown" class="countdown">
+											<svg id="svg1" class="none" xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65"
+												viewBox="0 0 120 120">
+												<!-- Путь заполнения линии прогрессбара     -->
+												<circle cx="60" cy="60" r="50" fill="none" stroke="#E1E1E1" stroke-width="1" />
+												<circle cx="60" cy="60" r="50" transform="rotate(-90 60 60)" fill="none"
+													stroke-dashoffset="314" stroke-dasharray="0, 314" stroke="#8CCCF6"
+													stroke-width="6">
+													<!-- Анимация изменения длины черты stroke-dasharray от нуля до максимума 314 -->
+													<animate attributeName="stroke-dasharray" begin="1s" dur="30s"
+														values="0,314;314,0" fill="freeze" repeatCount="indefinite" />
+												</circle>
+											</svg>
 											<div class="countdown-number">
 												<span class="seconds countdown-time"></span>
 												<span class="countdown-text">Sec.</span>
@@ -511,8 +619,10 @@
 								</div>
 								<div class="well-text">
 									<div class="well-text__top">КУРС:</div>
-									<div class="well-text__bottom"> <span id="currencyGive">1</span> : <span id="currencyGet">
-											0.97</span></div>
+									<div class="well-text__bottom">
+										<span id="currencyGive">1</span> :
+										<span id="currencyGet"> 0.97</span>
+									</div>
 								</div>
 							</div>
 							<div class="reserve">
@@ -520,14 +630,20 @@
 									<img src="./img/icons/well.svg" alt="" />
 									РЕЗЕРВ:
 								</div>
-								<div class="reserve-bottom"><span id="reserveNumber">1128350</span> <span
-										id="reserveCurrency">CASHUSD</span> </div>
+								<div class="reserve-bottom">
+									<span id="reserveNumber">1128350</span>
+									<span id="reserveCurrency">CASHUSD</span>
+								</div>
 							</div>
 						</div>
 
-						<div class="btn">
-							<div class="btn-text">Обменять</div>
-							<div class="btn-img"><img src="./img/Vector.svg" alt="" /></div>
+						<div>
+							<a id="butt" class="btn" href="#popup">
+								<div class="btn-text">Обменять</div>
+								<div class="btn-img">
+									<img src="./img/Vector.svg" alt="" />
+								</div>
+							</a>
 						</div>
 
 						<div class="question-mob">
@@ -1019,7 +1135,8 @@
 				<input class="contact-form__input" type="email" placeholder="E-mail" />
 				<a href="">
 					<div class="contact-form__btn">
-						Отправить<img src="./img/Vector222.png" alt="" /></div>
+						Отправить<img src="./img/Vector222.png" alt="" />
+					</div>
 				</a>
 			</form>
 		</section>
@@ -1035,7 +1152,8 @@
 				<input class="form__input" type="email" placeholder="E-mail" />
 				<a href="">
 					<div class="form__btn">
-						Отправить<img src="./img/Vector222.png" alt="" /></div>
+						Отправить<img src="./img/Vector222.png" alt="" />
+					</div>
 				</a>
 			</form>
 			<div class="contact-mob__info">
@@ -1060,11 +1178,30 @@
 			<div class="line">
 				<a id="start1" class="start"><img src="./img/Play.png" /></a>
 				<a id="stop1" class="stop pause" href="#0"><img src="./img/icons/pause.svg" alt="" /></a>
-				<marquee id="begFooter" behavior="scroll" direction="left" scrolldelay="200"
-					onmouseover="this.scrollDelay=70" onmouseout="this.scrollDelay=200">
-					<div class="line-scroll">
+				<div class="marquee-wrapper1">
+					<div class="line-scroll marquee1">
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">USDTTRC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">USDTERC</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">ADA</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BCH</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">ADVCUSD</div>
+							<div class="line-block__text">$66.666</div>
+						</div>
+						<div class="line-block">
+							<div class="line-block__value">BNB</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
@@ -1072,41 +1209,79 @@
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">LTC</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
-							<div class="line-block__text">$66.666</div>
-						</div>
-						<div class="line-block">
-							<div class="line-block__value">BTC</div>
+							<div class="line-block__value">ETH</div>
 							<div class="line-block__text">$66.666</div>
 						</div>
 					</div>
-				</marquee>
+				</div>
 			</div>
 		</section>
+	</div>
+
+	<div class="popup" id="popup">
+		<a href="" class="popup__area"></a>
+		<div class="popup__body">
+			<div class="popup__content">
+				<a href="" class="popup__close"><img src="./img/icons/X.png" alt="" /></a>
+				<div class="popup__block">
+					<div class="popup__img">
+						<img src="./img/popup-pc.png" alt="" />
+					</div>
+					<div class="popup__foreword">
+						<div class="popup__title">
+							Ви отримаете:
+							<div>
+								<span id="numberPopup">2 000</span><img id="iconPopup" src="/img/currency/USDTTRC.webp"
+									alt="" /><span id="currencyPopup">USDTTRC</span>
+							</div>
+						</div>
+						<div class="popup__list">
+							Щоб здійснити обмін введіть, будь ласка, контактні дані у поля
+							нижче
+						</div>
+						<div class="popup__list mob">
+							Щоб здійснити обмін введіть, контактні дані у поля нижче
+						</div>
+						<form class="popup__inputs">
+							<img class="popup__name" src="./img/name.svg" alt="" />
+							<img class="popup__call" src="./img/call.svg" alt="" />
+							<input class="popup__input-name" type="text" placeholder="Ваше ім'я" />
+							<input class="popup__input-tel" type="text" placeholder="Номер телефону" />
+						</form>
+						<a href="#popupThank">
+							<div class="popup__btn">
+								<img src="/img/Vector1234.svg" alt="" />Обміняти
+							</div>
+						</a>
+						<img class="popup__pic-mobile" src="/img/pic-popup-mobile.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup" id="popupThank">
+		<a href="" class="popup__area"></a>
+		<div class="popup__body">
+			<div class="popup__content">
+				<a href="" class="popup__close"><img src="./img/icons/X.png" alt="" /></a>
+				<div class="popup__block">
+					<div class="popup__img">
+						<img src="./img/popup-pc.png" alt="" />
+					</div>
+					<div class="popup__foreword">
+						<div class="popup__title-thank">
+							Дякуємо за довіру,<br />
+							ми найближчим часом зв’яжемось з вами
+						</div>
+						<img class="popup__pic-mobile" src="/img/pic-popup-mobile.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<footer>

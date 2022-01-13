@@ -2,25 +2,188 @@ $("#start").click(function () {
 	$("#stop").addClass("pause");
 	$(".start").removeClass(".start.pause");
 	$(this).removeClass("pause");
-	beg.start();
+
+	interval = setInterval(move, 40);
 });
 $("#stop").click(function () {
 	$("#start").addClass("pause");
 	$(".stop").removeClass(".stop.pause");
 	$(this).removeClass("pause");
-	beg.stop();
+
+	clearInterval(interval);
 });
 $("#start1").click(function () {
 	$("#stop1").addClass("pause");
 	$(".start").removeClass(".start.pause");
 	$(this).removeClass("pause");
-	begFooter.start();
+
+	interval1 = setInterval(move1, 40);
 });
 $("#stop1").click(function () {
 	$("#start1").addClass("pause");
 	$(".stop").removeClass(".stop.pause");
 	$(this).removeClass("pause");
-	begFooter.stop();
+
+	clearInterval(interval1);
+});
+
+// left
+$("#btnAll").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCash").removeClass("active-btn");
+	$("#btnCashless").removeClass("active-btn");
+	$("#btnCrypto").removeClass("active-btn");
+	$("#btnPayment").removeClass("active-btn");
+	$("#btnCNY").removeClass("active-btn");
+	$(".cash").removeClass("none");
+	$(".cashless").removeClass("none");
+	$(".crypto").removeClass("none");
+	$(".payment").removeClass("none");
+	$(".cny").removeClass("none");
+});
+$("#btnCash").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnAll").removeClass("active-btn");
+	$("#btnCashless").removeClass("active-btn");
+	$("#btnCrypto").removeClass("active-btn");
+	$("#btnPayment").removeClass("active-btn");
+	$("#btnCNY").removeClass("active-btn");
+	$(".cash").removeClass("none");
+	$(".cashless").addClass("none");
+	$(".crypto").addClass("none");
+	$(".payment").addClass("none");
+	$(".cny").addClass("none");
+});
+$("#btnCashless").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCash").removeClass("active-btn");
+	$("#btnAll").removeClass("active-btn");
+	$("#btnCrypto").removeClass("active-btn");
+	$("#btnPayment").removeClass("active-btn");
+	$("#btnCNY").removeClass("active-btn");
+	$(".cashless").removeClass("none");
+	$(".cash").addClass("none");
+	$(".crypto").addClass("none");
+	$(".payment").addClass("none");
+	$(".cny").addClass("none");
+});
+$("#btnCrypto").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCash").removeClass("active-btn");
+	$("#btnCashless").removeClass("active-btn");
+	$("#btnAll").removeClass("active-btn");
+	$("#btnPayment").removeClass("active-btn");
+	$("#btnCNY").removeClass("active-btn");
+	$(".crypto").removeClass("none");
+	$(".cash").addClass("none");
+	$(".cashless").addClass("none");
+	$(".payment").addClass("none");
+	$(".cny").addClass("none");
+});
+$("#btnPayment").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCash").removeClass("active-btn");
+	$("#btnCashless").removeClass("active-btn");
+	$("#btnCrypto").removeClass("active-btn");
+	$("#btnAll").removeClass("active-btn");
+	$("#btnCNY").removeClass("active-btn");
+	$(".payment").removeClass("none");
+	$(".cash").addClass("none");
+	$(".cashless").addClass("none");
+	$(".crypto").addClass("none");
+	$(".cny").addClass("none");
+});
+$("#btnCNY").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCash").removeClass("active-btn");
+	$("#btnCashless").removeClass("active-btn");
+	$("#btnCrypto").removeClass("active-btn");
+	$("#btnPayment").removeClass("active-btn");
+	$("#btnAll").removeClass("active-btn");
+	$(".cny").removeClass("none");
+	$(".cash").removeClass("none");
+	$(".cashless").removeClass("none");
+	$(".crypto").removeClass("none");
+	$(".payment").removeClass("none");
+});
+//right
+$("#btnAllright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCashright").removeClass("active-btn");
+	$("#btnCashlessright").removeClass("active-btn");
+	$("#btnCryptoright").removeClass("active-btn");
+	$("#btnPaymentright").removeClass("active-btn");
+	$("#btnCNYright").removeClass("active-btn");
+	$(".cash-right").removeClass("none");
+	$(".cashless-right").removeClass("none");
+	$(".crypto-right").removeClass("none");
+	$(".payment-right").removeClass("none");
+	$(".cny-right").removeClass("none");
+});
+$("#btnCashright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnAllright").removeClass("active-btn");
+	$("#btnCashlessright").removeClass("active-btn");
+	$("#btnCryptoright").removeClass("active-btn");
+	$("#btnPaymentright").removeClass("active-btn");
+	$("#btnCNYright").removeClass("active-btn");
+	$(".cash-right").removeClass("none");
+	$(".cashless-right").addClass("none");
+	$(".crypto-right").addClass("none");
+	$(".payment-right").addClass("none");
+	$(".cny-right").addClass("none");
+});
+$("#btnCashlessright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCashright").removeClass("active-btn");
+	$("#btnAllright").removeClass("active-btn");
+	$("#btnCryptoright").removeClass("active-btn");
+	$("#btnPaymentright").removeClass("active-btn");
+	$("#btnCNYright").removeClass("active-btn");
+	$(".cashless-right").removeClass("none");
+	$(".cash-right").addClass("none");
+	$(".crypto-right").addClass("none");
+	$(".payment-right").addClass("none");
+	$(".cny-right").addClass("none");
+});
+$("#btnCryptoright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCashright").removeClass("active-btn");
+	$("#btnCashlessright").removeClass("active-btn");
+	$("#btnAllright").removeClass("active-btn");
+	$("#btnPaymentright").removeClass("active-btn");
+	$("#btnCNYright").removeClass("active-btn");
+	$(".crypto-right").removeClass("none");
+	$(".cash-right").addClass("none");
+	$(".cashless-right").addClass("none");
+	$(".payment-right").addClass("none");
+	$(".cny-right").addClass("none");
+});
+$("#btnPaymentright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCashright").removeClass("active-btn");
+	$("#btnCashlessright").removeClass("active-btn");
+	$("#btnCryptoright").removeClass("active-btn");
+	$("#btnAllright").removeClass("active-btn");
+	$("#btnCNYright").removeClass("active-btn");
+	$(".payment-right").removeClass("none");
+	$(".cash-right").addClass("none");
+	$(".cashless-right").addClass("none");
+	$(".crypto-right").addClass("none");
+	$(".cny-right").addClass("none");
+});
+$("#btnCNYright").click(function () {
+	$(this).addClass("active-btn");
+	$("#btnCashright").removeClass("active-btn");
+	$("#btnCashlessright").removeClass("active-btn");
+	$("#btnCryptoright").removeClass("active-btn");
+	$("#btnPaymentright").removeClass("active-btn");
+	$("#btnAllright").removeClass("active-btn");
+	$(".cny-right").removeClass("none");
+	$(".cash-right").removeClass("none");
+	$(".cashless-right").removeClass("none");
+	$(".crypto-right").removeClass("none");
+	$(".payment-right").removeClass("none");
 });
 
 $(document).ready(function () {
@@ -55,9 +218,30 @@ $(".dropdown").focusout(function () {
 	$(this).removeClass("active");
 	$(this).find(".dropdown-menu").slideUp(300);
 });
+
 $(".dropdown .dropdown-menu li").click(function () {
 	$(this).parents(".dropdown").find("span").text($(this).text());
 	$(this).parents(".dropdown").find("input").attr("value", $(this).attr("id"));
+	$(".dropdown .dropdown-menu li .icon-left")
+		.parents(".dropdown")
+		.find(".select img")
+		.attr("src", $(this).find(".icon-left").attr("src"));
+	$(".dropdown .dropdown-menu li .icon-right")
+		.parents(".dropdown")
+		.find(".select img")
+		.attr("src", $(this).find(".icon-right").attr("src"));
+});
+
+butt.onclick = function () {
+	var val = document.getElementById("inputGet").value;
+	document.getElementById("numberPopup").innerHTML = val;
+};
+$("#butt").click(function () {
+	var textContent = $("#currencyInput").text();
+	$("#currencyPopup").text(textContent);
+	$(".popup__title")
+		.find("#iconPopup")
+		.attr("src", $("#selectGet").find("#iconCurrency").attr("src"));
 });
 $(".dropdown-menu li").click(function () {
 	var input =
@@ -302,5 +486,57 @@ function initializeClock(id, endtime) {
 	var timeinterval = setInterval(updateClock, 1000);
 }
 
-var deadline = new Date(Date.parse(new Date()) + 30 * 1000);
-initializeClock("countdown", deadline);
+setTimeout(() => {
+	var deadline = new Date(Date.parse(new Date()) + 30 * 1000);
+	initializeClock("countdown", deadline);
+	$("#svg1").removeClass("none");
+}, 3000);
+
+let wrapper = document.querySelector('.marquee-wrapper'),
+	marquee = document.querySelector('.marquee'),
+	wrapperWidth = wrapper.offsetWidth,
+	marqueeWidth = marquee.scrollWidth;
+
+
+
+function move() {
+	var currentTX = getComputedStyle(marquee).transform.split(',');
+	if (currentTX[4] === undefined) {
+		currentTX = -1;
+	} else {
+		currentTX = parseFloat(currentTX[4]) - 1;
+	}
+
+	if (-currentTX >= marqueeWidth) {
+		marquee.style.transform = 'translateX(' + wrapperWidth + 'px)';
+
+	} else {
+		marquee.style.transform = 'translateX(' + currentTX + 'px)';
+	}
+}
+
+let interval = setInterval(move, 40);
+
+let wrapper1 = document.querySelector('.marquee-wrapper1'),
+	marquee1 = document.querySelector('.marquee1'),
+	wrapper1Width = wrapper1.offsetWidth,
+	marquee1Width = marquee1.scrollWidth;
+
+function move1() {
+	var currentTX1 = getComputedStyle(marquee1).transform.split(',');
+	if (currentTX1[4] === undefined) {
+		currentTX1 = -1;
+	} else {
+		currentTX1 = parseFloat(currentTX1[4]) - 1;
+	}
+
+	if (-currentTX1 >= marquee1Width) {
+		marquee1.style.transform = 'translateX(' + wrapper1Width + 'px)';
+
+	} else {
+		marquee1.style.transform = 'translateX(' + currentTX1 + 'px)';
+	}
+}
+
+let interval1 = setInterval(move1, 40);
+
